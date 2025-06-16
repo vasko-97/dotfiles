@@ -83,11 +83,11 @@ let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
 let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 
-let g:WhichKeyDesc_action= "<leader>s Search"
-let g:WhichKeyDesc_action_search = "<leader>se Search Everywhere"
+let g:WhichKeyDesc_search = "<leader>s Search"
+let g:WhichKeyDesc_everywhere_search = "<leader>se Search Everywhere"
 let g:WhichKeyDesc_action_search = "<leader>sa Search Actions"
-let g:WhichKeyDesc_action_search = "<leader>sf Search Files"
-let g:WhichKeyDesc_action_search = "<leader>st Search Text in Files"
+let g:WhichKeyDesc_file_search = "<leader>sf Search Files"
+let g:WhichKeyDesc_text_search = "<leader>st Search Text in Files"
 
 let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
 let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Show recent files"
@@ -176,11 +176,10 @@ map <leader>df <action>(ToggleFullScreen)
 " Search
 map <leader>se <action>(SearchEverywhere)
 map <leader>sa <action>(GotoAction)
-map <leader>sf <action>(GoToFile)
+map <leader>sf <action>(GotoFile)
 map <leader>st <action>(FindInPath)
 
 " File navigation
-map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
@@ -203,5 +202,5 @@ nmap <leader>gf <Action>(Back)
 nmap <leader>gb <Action>(Forward)
 
 " Errors
-map <leader>en <Action>(GoToNextError)
-map <leader>ep <Action>(GoToPreviousError)
+map <leader>en <Action>(GotoNextError)
+map <leader>ep <Action>(GotoPreviousError)
