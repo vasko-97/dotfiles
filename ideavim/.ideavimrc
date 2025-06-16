@@ -129,9 +129,8 @@ inoremap kj <Esc>
 " nnoremap <A-j> <C-w>j
 
 " Jump between methods
-nnoremap [[ <Action>(MethodUp)
-nnoremap ]] <Action>(MethodDown)
-
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
 " Easy visual indentation
 vnoremap < <gv
 vnoremap > >gv
