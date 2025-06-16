@@ -59,11 +59,13 @@ let g:WhichKey_SortOrder = "by_key_prefix_first"
 
 let g:WhichKeyDesc_leader = "<leader> Leader key"
 
+" Top level bindings
 let g:WhichKeyDesc_leader = "<leader>x Open file explorer"
+let g:WhichKeyDesc_run_build = "<leader>b Build"
+let g:WhichKeyDesc_action_context_menu = "<leader>m Show Intention Actions"
+let g:WhichKeyDesc_comment = "<leader>c Comment line"
 
 " let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
-
-let g:WhichKeyDesc_comment = "<leader>c Comment line"
 
 let g:WhichKeyDesc_fold = "<leader>z Folding"
 let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
@@ -81,17 +83,15 @@ let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
 let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 
-let g:WhichKeyDesc_action= "<leader>a Actions"
-let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
-let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
+let g:WhichKeyDesc_action= "<leader>s Search"
+let g:WhichKeyDesc_action_search = "<leader>se Search Everywhere"
+let g:WhichKeyDesc_action_search = "<leader>sa Search Actions"
+let g:WhichKeyDesc_action_search = "<leader>sf Search Files"
+let g:WhichKeyDesc_action_search = "<leader>st Search Text in Files"
 
 let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
-let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
-let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search for file content"
 let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Show recent files"
 let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent locations"
-
-let g:WhichKeyDesc_close_tab = "<leader>q Close active tab"
 
 let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
 let g:WhichKeyDesc_refactoring_rename = "<leader>rn Rename element"
@@ -148,14 +148,15 @@ nnoremap qj @q
 "" Leader commands
 "" ========================================================
 
-" Comment lines
+" Top level commands
 map <leader>c <action>(CommentByLineComment)
+" Open NERDTree (use q to exit)
+map <leader>x :NERDTreeToggle<CR>
+map <leader>b <Action>(BuildProject)
+map <leader>m <action>(ShowIntentionActions)
 
 " Jump around with easymotion
 " map <leader>j <Plug>(easymotion-s)
-
-" Open NERDTree (use q to exit)
-map <leader>x :NERDTreeToggle<CR>
 
 " Folding
 map <leader>zc :action CollapseAllRegions<CR>
@@ -172,19 +173,17 @@ map <leader>dd <action>(ToggleDistractionFreeMode)
 map <leader>dz <action>(ToggleZenMode)
 map <leader>df <action>(ToggleFullScreen)
 
-" Actions
-map <leader>am <action>(ShowIntentionActions)
-map <leader>as <action>(SearchEverywhere)
+" Search
+map <leader>se <action>(SearchEverywhere)
+map <leader>sa <action>(GotoAction)
+map <leader>sf <action>(GoToFile)
+map <leader>st <action>(FindInPath)
 
 " File navigation
 map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
-
-" Close active tab
-map <leader>q <action>(CloseContent)
 
 " Refactoring
 map <leader>rn <Action>(RenameElement)
@@ -204,7 +203,5 @@ nmap <leader>gf <Action>(Back)
 nmap <leader>gb <Action>(Forward)
 
 " Errors
-map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
-map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
-
-
+map <leader>en <Action>(GoToNextError)
+map <leader>ep <Action>(GoToPreviousError)
