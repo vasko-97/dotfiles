@@ -64,6 +64,7 @@ let g:WhichKeyDesc_leader = "<leader>x Open file explorer"
 let g:WhichKeyDesc_run_build = "<leader>b Build"
 let g:WhichKeyDesc_action_context_menu = "<leader>m Show Intention Actions"
 let g:WhichKeyDesc_comment = "<leader>c Comment line"
+let g:WhichKeyDesc_show_in_project_view = "<leader>p Select in Project View"
 
 " let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
 
@@ -153,6 +154,7 @@ map <leader>c <action>(CommentByLineComment)
 map <leader>x :NERDTreeToggle<CR>
 map <leader>b <Action>(BuildProject)
 map <leader>m <action>(ShowIntentionActions)
+map <leader>p <action>(SelectInProjectView)
 
 " Jump around with easymotion
 " map <leader>j <Plug>(easymotion-s)
