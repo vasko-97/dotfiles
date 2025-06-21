@@ -215,3 +215,31 @@ let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
 let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
 map <leader>en <Action>(GotoNextError)
 map <leader>ep <Action>(GotoPreviousError)
+
+" HarpoonIJ
+let g:WhichKeyDesc_harpoon = "<leader>h Harpoon"
+let g:WhichKeyDesc_show_harpoon = "<leader>ho Open Harpoon Popup"
+let g:WhichKeyDesc_add_to_harpoon = "<leader>ha Add to Harpoon"
+let g:WhichKeyDesc_set_harpoon = "<leader>hs Set Harpoon"
+let g:WhichKeyDesc_set_harpoon_1 = "<leader>hs1 Set Harpoon 1"
+let g:WhichKeyDesc_set_harpoon_2 = "<leader>hs2 Set Harpoon 2"
+let g:WhichKeyDesc_set_harpoon_3 = "<leader>hs3 Set Harpoon 3"
+let g:WhichKeyDesc_set_harpoon_4 = "<leader>hs4 Set Harpoon 4"
+let g:WhichKeyDesc_set_harpoon_5 = "<leader>hs5 Set Harpoon 5"
+let g:WhichKeyDesc_go_to_harpoon_1 = "<leader>h1 Go to Harpoon 1"
+let g:WhichKeyDesc_go_to_harpoon_2 = "<leader>h2 Go to Harpoon 2"
+let g:WhichKeyDesc_go_to_harpoon_3 = "<leader>h3 Go to Harpoon 3"
+let g:WhichKeyDesc_go_to_harpoon_4 = "<leader>h4 Go to Harpoon 4"
+let g:WhichKeyDesc_go_to_harpoon_5 = "<leader>h5 Go to Harpoon 5"
+map <leader>ho <Action>(ShowHarpoon)
+map <leader>ha <Action>(AddToHarpoon)
+map <leader>hs1 <Action>(SetHarpoon1)
+map <leader>hs2 <Action>(SetHarpoon2)
+map <leader>hs3 <Action>(SetHarpoon3)
+map <leader>hs4 <Action>(SetHarpoon4)
+map <leader>hs5 <Action>(SetHarpoon5)
+map <leader>h1 <Action>(GotoHarpoon1)
+map <leader>h2 <Action>(GotoHarpoon2)
+map <leader>h3 <Action>(GotoHarpoon3)
+map <leader>h4 <Action>(GotoHarpoon4)
+map <leader>h5 <Action>(GotoHarpoon5)
