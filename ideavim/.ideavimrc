@@ -203,7 +203,6 @@ let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
 let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
 let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
 let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
-let g:WhichKeyDesc_goto_action = "<leader>ga Go to Action"
 nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
@@ -211,7 +210,6 @@ nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
 nmap <leader>gf <Action>(Back)
 nmap <leader>gb <Action>(Forward)
-nmap <leader>ga <Action>(GotoAction)
 
 " Errors
 let g:WhichKeyDesc_errors = "<leader>e Error navigation"
