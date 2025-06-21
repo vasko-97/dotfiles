@@ -30,9 +30,6 @@ set hlsearch
 
 set visualbell
 
-" Use system clipboard
-set clipboard+=unnamed   
-
 let mapleader = " "
 set notimeout
 
@@ -41,7 +38,7 @@ set notimeout
 
 set surround
 set highlightedyank
-set sneak
+" set sneak
 " I want to get my basics good before getting into quickscope.
 " set quickscope
 set nerdtree
@@ -60,11 +57,26 @@ let g:WhichKey_SortOrder = "by_key_prefix_first"
 let g:WhichKeyDesc_leader = "<leader> Leader key"
 
 " Top level bindings
-let g:WhichKeyDesc_leader = "<leader>x Open file explorer"
-let g:WhichKeyDesc_run_build = "<leader>b Build"
-let g:WhichKeyDesc_action_context_menu = "<leader>m Show Intention Actions"
-let g:WhichKeyDesc_comment = "<leader>c Comment line"
-let g:WhichKeyDesc_show_in_project_view = "<leader>p Select in Project View"
+let g:WhichKeyDesc_copy = "<leader>y Copy"
+let g:WhichKeyDesc_paste = "<leader>p Paste"
+
+" Run
+let g:WhichKeyDesc_build_run_debug = "<leader>o Build/Run/Debug"
+let g:WhichKeyDesc_run = "<leader>or Run"
+let g:WhichKeyDesc_build = "<leader>ob Build"
+let g:WhichKeyDesc_debug = "<leader>od Debug"
+let g:WhichKeyDesc_toggle_breakpoint = "<leader>op Toggle Breakpoint"
+
+" Misc
+let g:WhichKeyDesc_misc = "<leader>m Misc"
+let g:WhichKeyDesc_leader = "<leader>mx Open Project View"
+let g:WhichKeyDesc_comment = "<leader>mc Comment line"
+let g:WhichKeyDesc_show_in_project_view = "<leader>me Select in Project/Explorer View"
+let g:WhichKeyDesc_show_parameter_info = "<leader>mp Show Parameter Info"
+let g:WhichKeyDesc_reformat_code = "<leader>mr Reformat Code"
+let g:WhichKeyDesc_toggle_wrap = "<leader>mw Toggle Soft Wrap"
+let g:WhichKeyDesc_hide_all_windows = "<leader>mh Toggle Hide All Windows"
+let g:WhichKeyDesc_show_hover_info = "<leader>mi Show Hover Info"
 
 " let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
 
@@ -91,7 +103,7 @@ let g:WhichKeyDesc_file_search = "<leader>sf Search Files"
 let g:WhichKeyDesc_text_search = "<leader>st Search Text in Files"
 
 let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
-let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Show recent files"
+let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fe Show recent files"
 let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent locations"
 
 let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
@@ -110,6 +122,7 @@ let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
 let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
 let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
 let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
+let g:WhichKeyDesc_goto_action = "<leader>ga Go to Action"
 
 let g:WhichKeyDesc_errors = "<leader>e Error navigation"
 let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
@@ -149,12 +162,24 @@ nnoremap qj @q
 "" ========================================================
 
 " Top level commands
-map <leader>c <action>(CommentByLineComment)
-" Open NERDTree (use q to exit)
-map <leader>x :NERDTreeToggle<CR>
-map <leader>b <Action>(BuildProject)
-map <leader>m <action>(ShowIntentionActions)
-map <leader>p <action>(SelectInProjectView)
+map <leader>y <action>($Copy)
+map <leader>p <action>($Paste)
+
+" Misc
+map <leader>mc <action>(CommentByLineComment)
+map <leader>mx :NERDTreeToggle<CR>
+map <leader>me <action>(SelectInProjectView)
+map <leader>mp <action>(ParameterInfo)
+map <leader>mr <action>(ReformatCode)
+map <leader>mw <action>(EditorToggleUseSoftWraps)
+map <leader>mh <action>(HideAllWindows)
+map <leader>mi <action>(ShowHoverInfo)
+
+" Build/Run/Debug
+map <leader>or <action>(Run)
+map <leader>ob <action>(BuildProject)
+map <leader>od <action>(Debug)
+map <leader>op <action>(ToggleLineBreakpoint)
 
 " Jump around with easymotion
 " map <leader>j <Plug>(easymotion-s)
@@ -181,7 +206,7 @@ map <leader>sf <action>(GotoFile)
 map <leader>st <action>(FindInPath)
 
 " File navigation
-map <leader>fr <action>(RecentFiles)
+map <leader>fe <action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
 
@@ -201,6 +226,7 @@ nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
 nmap <leader>gf <Action>(Back)
 nmap <leader>gb <Action>(Forward)
+nmap <leader>ga <Action>(GotoAction)
 
 " Errors
 map <leader>en <Action>(GotoNextError)
