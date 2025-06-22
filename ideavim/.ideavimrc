@@ -284,8 +284,7 @@ map <leader>h3 <Action>(GotoHarpoon3)
 map <leader>h4 <Action>(GotoHarpoon4)
 map <leader>h5 <Action>(GotoHarpoon5)
 
-" reload config
-map <leader>9 :source ~/.ideavimrc<CR>
 let g:WhichKeyDesc_reload_vim_rc = "<leader>9 Reload .ideavimrc"
-" clear the search buffer when hitting return
-nnoremap <leader><CR> :nohlsearch<CR>
+map <leader>9 :source ~/.ideavimrc<CR>
+let g:WhichKeyDesc_remove_search_highlight = "<leader><CR> Clear Search Highlights"
+map <leader><CR> :nohlsearch<CR>
