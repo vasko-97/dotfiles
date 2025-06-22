@@ -1,18 +1,27 @@
-" based on various different ideavimrcs, including https://github.com/OptimusCrime/ideavim/blob/main/ideavimrc
-
+" Based on various different ideavimrcs. Resources: 
+" https://github.com/OptimusCrime/ideavim/blob/main/ideavimrc
+" massive collection: https://github.com/JetBrains/ideavim/discussions/303
+" https://medium.com/@dbilici/a-practical-ideavim-setup-for-intellij-idea-cf74222e7b45
+" https://towardsdatascience.com/the-essential-ideavim-remaps-291d4cd3971b/
 "" Base Settings
 "" ========================================================
 
 set relativenumber
 set number
 set ideajoin
+set idearefactormode=visual
 set ideamarks
 set showmode
 set showcmd
-set smartcase
+set ignorecase smartcase
+" IdeaVim does not support command history, but useful for future vim/neovim
+" rcs...
+set history=1000
 set incsearch
 set hlsearch
+set scrolloff=5
 set visualbell
+set virtualedit=onemore
 
 let mapleader = " "
 set notimeout
@@ -53,6 +62,8 @@ nnoremap M Mzz
 nnoremap L Lzz
 nnoremap n nzzzv
 nnoremap N Nzzzv
+vnoremap n nzzzv
+vnoremap N Nzzzv
 
 " After block yank and paste, move cursor to the end of operated text and don't override register
 vnoremap p "_dP`]
@@ -100,9 +111,10 @@ map g<c-i> <c-i>
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-" Jump between methods
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
+map gn <Action>(GotoNextElementUnderCaretUsage)
+map gN <Action>(GotoPrevElementUnderCaretUsage)
 " Easy visual indentation
 vnoremap < <gv
 vnoremap > >gv
@@ -128,6 +140,7 @@ let g:WhichKeyDesc_toggle_wrap = "<leader>mw Toggle Soft Wrap"
 let g:WhichKeyDesc_hide_all_windows = "<leader>mh Toggle Hide All Windows"
 let g:WhichKeyDesc_show_hover_info = "<leader>mi Show Hover Info"
 let g:WhichKeyDesc_move_file = "<leader>mv Move File (Fuzzier)"
+let g:WhichKeyDesc_switcher = "<leader>ms Open Switcher"
 let g:WhichKeyDesc_select_whole_file = "<leader>ma Select Whole File"
 map <leader>mc <action>(CommentByLineComment)
 map <leader>mx :NERDTreeToggle<CR>
@@ -138,7 +151,8 @@ map <leader>mw <action>(EditorToggleUseSoftWraps)
 map <leader>mh <action>(HideAllWindows)
 map <leader>mi <action>(ShowHoverInfo)
 map <leader>mv <action>(com.mituuz.fuzzier.FuzzyMover)
-map <Leader>aa ggVG
+map <leader>ms <action>(Switcher)
+map <Leader>ma ggVG
 
 " Build/Run/Debug
 let g:WhichKeyDesc_build_run_debug = "<leader>o Build/Run/Debug"
@@ -269,3 +283,9 @@ map <leader>h2 <Action>(GotoHarpoon2)
 map <leader>h3 <Action>(GotoHarpoon3)
 map <leader>h4 <Action>(GotoHarpoon4)
 map <leader>h5 <Action>(GotoHarpoon5)
+
+" reload config
+map <leader>9 :source ~/.ideavimrc<CR>
+let g:WhichKeyDesc_reload_vim_rc = "<leader>9 Reload .ideavimrc"
+" clear the search buffer when hitting return
+nnoremap <leader><CR> :nohlsearch<CR>
