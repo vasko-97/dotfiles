@@ -20,7 +20,7 @@ set history=1000
 set incsearch
 set hlsearch
 set scrolloff=5
-set visualbell
+" set visualbell
 set virtualedit=onemore
 
 let mapleader = " "
@@ -70,12 +70,11 @@ vnoremap p "_dP`]
 nnoremap p p`]
 
 " move cursor to end of selection after yanking it
-vnoremap y ygv<Esc>$
+vnoremap y ygv<Esc>]
 " Y should yank until the end of line, for consistency with C, D
 nnoremap Y y$
 
 " Yank and paste from OS clipboard
-" v-todo if this works well then remove $Copy/$Paste action binds
 nnoremap ,y "+y
 vnoremap ,y "+y
 nnoremap ,yy "+yy
@@ -93,14 +92,9 @@ vmap x "_d
 nnoremap c "xc
 xnoremap c "xc
 
-" Copy Word
-nmap ,c yiw
-" Select word
-nmap ,v viw
-
 " Reselect last-pasted text
 " use cases: format, indent, comment
-nnoremap gp `[v`
+nnoremap gp `[v`]
 
 " built-in navigation to navigated items works better
 nmap <c-o> <Action>(Back)
