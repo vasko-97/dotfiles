@@ -147,6 +147,10 @@ map <leader>mi <action>(ShowHoverInfo)
 map <leader>mv <action>(com.mituuz.fuzzier.FuzzyMover)
 map <leader>ms <action>(Switcher)
 map <Leader>ma ggVG
+if &ide =~? 'JetBrains Rider'
+	let g:WhichKeyDesc_select_containing_declaration = "<leader>mm Select Containing Declaration"
+	map <leader>mm <action>(ReSharperSelectContainingDeclaration)
+endif
 
 " Build/Run/Debug
 let g:WhichKeyDesc_build_run_debug = "<leader>o Build/Run/Debug"
