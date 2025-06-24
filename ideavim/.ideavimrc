@@ -155,7 +155,11 @@ let g:WhichKeyDesc_build = "<leader>ob Build"
 let g:WhichKeyDesc_debug = "<leader>od Debug"
 let g:WhichKeyDesc_toggle_breakpoint = "<leader>op Toggle Breakpoint"
 map <leader>or <action>(Run)
-map <leader>ob <action>(BuildProject)
+if &ide =~? 'JetBrains Rider'
+	map <leader>ob <action>(BuildWholeSolutionAction)
+else
+	map <leader>ob <action>(BuildProject)
+endif
 map <leader>od <action>(Debug)
 map <leader>op <action>(ToggleLineBreakpoint)
 
