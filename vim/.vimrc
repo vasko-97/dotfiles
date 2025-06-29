@@ -6,6 +6,15 @@
 "" Base Settings
 "" ========================================================
 
+
+" Save session automatically on exit
+autocmd VimLeavePre * mksession! ~/.vim/session.vim
+
+" Load session automatically on start if it exists
+if filereadable(expand("~/.vim/session.vim"))
+  autocmd VimEnter * source ~/.vim/session.vim
+endif
+
 set relativenumber
 set number
 set showmode
