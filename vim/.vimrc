@@ -43,9 +43,9 @@ endif
 " center cursor after screen movement
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
-nnoremap H Hzz
-nnoremap M Mzz
-nnoremap L Lzz
+" nnoremap H Hzz
+" nnoremap M Mzz
+" nnoremap L Lzz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 vnoremap n nzzzv
