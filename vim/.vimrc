@@ -68,6 +68,7 @@ nnoremap ,y "+y
 vnoremap ,y "+y
 nnoremap ,yy "+yy
 nnoremap ,p "+p
+vnoremap ,p "+p
 
 " have x (removes single character) not go into the default registry
 nnoremap x "_x
