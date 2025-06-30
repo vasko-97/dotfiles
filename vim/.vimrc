@@ -24,9 +24,11 @@ set history=1000
 set incsearch
 set hlsearch
 set title
+set hidden
+set nocompatible
 set scrolloff=5
 " set visualbell
-set virtualedit=onemore
+" set virtualedit=onemore
 
 let mapleader = " "
 set notimeout
@@ -43,9 +45,10 @@ endif
 " center cursor after screen movement
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
-nnoremap H Hzz
-nnoremap M Mzz
-nnoremap L Lzz
+" not sure I like these...
+" nnoremap H Hzz
+" nnoremap M Mzz
+" nnoremap L Lzz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 vnoremap n nzzzv
