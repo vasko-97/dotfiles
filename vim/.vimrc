@@ -6,7 +6,6 @@
 "" Base Settings
 "" ========================================================
 
-
 " Save session automatically on exit
 autocmd VimLeavePre * mksession! ~/.vim/session.vim
 
@@ -27,20 +26,28 @@ set title
 set hidden
 set nocompatible
 set scrolloff=5
+colorscheme desert
 " set visualbell
 " set virtualedit=onemore
 
 let mapleader = " "
 set notimeout
 
-if &term =~ "xterm"
-  let &t_SI = "\e[6 q"   " Insert mode: beam
-  let &t_EI = "\e[2 q"   " Normal mode: block
-  let &t_SR = "\e[4 q"   " Replace mode: underline
-endif
+
+let &t_SI = "\e[6 q"   " Insert mode: beam
+let &t_EI = "\e[2 q"   " Normal mode: block
+let &t_SR = "\e[4 q"   " Replace mode: underline
 
 "" Key mappings
 "" ========================================================
+
+" GNU readline style keymaps for command line editing
+:cnoremap <C-A> <Home>
+:cnoremap <C-F> <Right>
+:cnoremap <C-B> <Left>
+:cnoremap <M-b> <S-Left>
+:cnoremap <M-f> <S-Right>
+:cnoremap <C-D> <Del>
 
 " center cursor after screen movement
 nnoremap <C-d> <C-d>zz
