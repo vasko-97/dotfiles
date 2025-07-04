@@ -26,7 +26,14 @@ set title
 set hidden
 set nocompatible
 set scrolloff=5
-colorscheme desert
+
+if !has('unix')
+	" colorschemes don't seem to work the same on Linux and Windows.. default scheme seems fine on Linux, but on Windows I noticed it makes the yaml synax highlighting poor and changing the colorscheme fixes it. 
+	colorscheme desert
+	" without this on Windows the text wraps way too narrowly.. not sure why only on Windows
+	set textwidth=0
+end
+
 " set visualbell
 " set virtualedit=onemore
 
@@ -42,12 +49,12 @@ let &t_SR = "\e[4 q"   " Replace mode: underline
 "" ========================================================
 
 " GNU readline style keymaps for command line editing
-:cnoremap <C-A> <Home>
-:cnoremap <C-F> <Right>
-:cnoremap <C-B> <Left>
-:cnoremap <M-b> <S-Left>
-:cnoremap <M-f> <S-Right>
-:cnoremap <C-D> <Del>
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
+cnoremap <C-D> <Del>
 
 " center cursor after screen movement
 nnoremap <C-d> <C-d>zz
