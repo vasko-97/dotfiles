@@ -73,7 +73,7 @@ vnoremap p "_dP`]
 nnoremap p p`]
 
 " move cursor to end of selection after yanking it
-vnoremap y ygv<Esc>`]
+vnoremap y ygv<Esc>`>
 " Y should yank until the end of line, for consistency with C, D
 nnoremap Y y$
 
