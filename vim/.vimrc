@@ -10,7 +10,7 @@
 autocmd VimLeavePre * mksession! ~/.vim/session.vim
 
 " Load session automatically on start if it exists
-if filereadable(expand("~/.vim/session.vim"))
+if filereadable(expand("~/.vim/session.vim")) && argc() == 0
   autocmd VimEnter * source ~/.vim/session.vim
 endif
 
@@ -26,20 +26,16 @@ set title
 set hidden
 set nocompatible
 set scrolloff=5
-
+set clipboard=unnamedplus
+" without this the text wraps way too narrowly..
+set textwidth=0
 if !has('unix')
 	" colorschemes don't seem to work the same on Linux and Windows.. default scheme seems fine on Linux, but on Windows I noticed it makes the yaml synax highlighting poor and changing the colorscheme fixes it. 
 	colorscheme desert
-	" without this on Windows the text wraps way too narrowly.. not sure why only on Windows
-	set textwidth=0
 end
-
-" set visualbell
-" set virtualedit=onemore
 
 let mapleader = " "
 set notimeout
-
 
 let &t_SI = "\e[6 q"   " Insert mode: beam
 let &t_EI = "\e[2 q"   " Normal mode: block
@@ -59,10 +55,6 @@ cnoremap <C-D> <Del>
 " center cursor after screen movement
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
-" not sure I like these...
-" nnoremap H Hzz
-" nnoremap M Mzz
-" nnoremap L Lzz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 vnoremap n nzzzv
@@ -78,11 +70,11 @@ vnoremap y ygv<Esc>`]
 nnoremap Y y$
 
 " Yank and paste from OS clipboard
-nnoremap ,y "+y
-vnoremap ,y "+y
-nnoremap ,yy "+yy
-nnoremap ,p "+p
-vnoremap ,p "+p
+" nnoremap ,y "+y
+" vnoremap ,y "+y
+" nnoremap ,yy "+yy
+" nnoremap ,p "+p
+" vnoremap ,p "+p
 
 " have x (removes single character) not go into the default registry
 nnoremap x "_x
