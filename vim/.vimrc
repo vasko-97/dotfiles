@@ -6,12 +6,17 @@
 "" Base Settings
 "" ========================================================
 
-" Save session automatically on exit
-autocmd VimLeavePre * mksession! ~/.vim/session.vim
+" set up persistent session when opening Vim without any arguments
+if argc() == 0
 
-" Load session automatically on start if it exists
-if filereadable(expand("~/.vim/session.vim")) && argc() == 0
-  autocmd VimEnter * source ~/.vim/session.vim
+  " load session if one exists
+  if filereadable(expand("~/.vim/session.vim"))
+    autocmd VimEnter * source ~/.vim/session.vim
+  endif
+
+  " update or create session when exiting
+  autocmd VimLeavePre * mksession! ~/.vim/session.vim
+
 endif
 
 set relativenumber
