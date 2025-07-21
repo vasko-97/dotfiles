@@ -73,3 +73,13 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 eval "$(fzf --bash)"
 
 export PROMPT_COMMAND='history -a; history -n'
+
+mvc() {
+	mullvad connect
+	mullvad lockdown-mode set on
+}
+
+mvd() {
+    mullvad disconnect
+    mullvad lockdown-mode set off
+}
