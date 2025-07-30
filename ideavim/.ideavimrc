@@ -91,7 +91,7 @@ if &ide =~? 'JetBrains Rider'
 	map <leader>mm <action>(ReSharperSelectContainingDeclaration)
 endif
 if &ide =~? 'DataGrip'
-	let g:WhichKeyDesc_show_in_database_view = "<leader>me Select in Database View"
+	let g:WhichKeyDesc_show_in_database_view = "<leader>md Select in Database View"
 	map <leader>md <action>(sql.SelectInDatabaseView)
 endif
 
