@@ -9,6 +9,7 @@
 if filereadable(expand("~/.vim/session.vim")) && argc() == 0
   autocmd VimEnter * source ~/.vim/session.vim
   autocmd VimLeavePre * mksession! ~/.vim/session.vim
+  set sessionoptions-=options
 endif
 
 set relativenumber
