@@ -12,6 +12,8 @@ if filereadable(expand("~/.vim/session.vim")) && argc() == 0
   set sessionoptions-=options
 endif
 
+filetype plugin indent on
+syntax on
 set relativenumber
 set number
 set showmode
