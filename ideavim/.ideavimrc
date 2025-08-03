@@ -66,6 +66,7 @@ map gN <Action>(GotoPrevElementUnderCaretUsage)
 let g:WhichKeyDesc_misc = "<leader>m Misc"
 let g:WhichKeyDesc_leader = "<leader>mx Open Project View"
 let g:WhichKeyDesc_comment = "<leader>mc Comment line"
+let g:WhichKeyDesc_show_in_project_view = "<leader>mc Show in Project View"
 let g:WhichKeyDesc_show_parameter_info = "<leader>mp Show Parameter Info"
 let g:WhichKeyDesc_reformat_code = "<leader>mr Reformat Code"
 let g:WhichKeyDesc_toggle_wrap = "<leader>mw Toggle Soft Wrap"
@@ -74,15 +75,9 @@ let g:WhichKeyDesc_show_hover_info = "<leader>mi Show Hover Info"
 let g:WhichKeyDesc_move_file = "<leader>mv Move File (Fuzzier)"
 let g:WhichKeyDesc_switcher = "<leader>ms Open Switcher"
 let g:WhichKeyDesc_select_whole_file = "<leader>ma Select Whole File"
-map <leader>mc <action>(CommentByLineComment)
 map <leader>mx :NERDTreeToggle<CR>
-if &ide =~? 'DataGrip'
-	let g:WhichKeyDesc_show_in_database_view = "<leader>me Select in Database View"
-	map <leader>me <action>(sql.SelectInDatabaseView)
-else
-	let g:WhichKeyDesc_show_in_project_view = "<leader>me Select in Project/Explorer View"
-	map <leader>me <action>(SelectInProjectView)
-endif
+map <leader>mc <action>(CommentByLineComment)
+map <leader>me <action>(SelectInProjectView)
 map <leader>mp <action>(ParameterInfo)
 map <leader>mr <action>(ReformatCode)
 map <leader>mw <action>(EditorToggleUseSoftWraps)
@@ -94,6 +89,10 @@ map <Leader>ma ggVG
 if &ide =~? 'JetBrains Rider'
 	let g:WhichKeyDesc_select_containing_declaration = "<leader>mm Select Containing Declaration"
 	map <leader>mm <action>(ReSharperSelectContainingDeclaration)
+endif
+if &ide =~? 'DataGrip'
+	let g:WhichKeyDesc_show_in_database_view = "<leader>md Select in Database View"
+	map <leader>md <action>(sql.SelectInDatabaseView)
 endif
 
 " Build/Run/Debug
