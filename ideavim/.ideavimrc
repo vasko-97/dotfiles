@@ -66,7 +66,7 @@ map gN <Action>(GotoPrevElementUnderCaretUsage)
 let g:WhichKeyDesc_misc = "<leader>m Misc"
 let g:WhichKeyDesc_leader = "<leader>mx Open Project View"
 let g:WhichKeyDesc_comment = "<leader>mc Comment line"
-let g:WhichKeyDesc_show_in_project_view = "<leader>mc Show in Project View"
+let g:WhichKeyDesc_show_in_project_view = "<leader>me Show in Project View"
 let g:WhichKeyDesc_show_parameter_info = "<leader>mp Show Parameter Info"
 let g:WhichKeyDesc_reformat_code = "<leader>mr Reformat Code"
 let g:WhichKeyDesc_toggle_wrap = "<leader>mw Toggle Soft Wrap"
