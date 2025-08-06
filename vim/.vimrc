@@ -64,6 +64,10 @@ vnoremap N Nzzzv
 vnoremap p "_dP`]
 nnoremap p p`]
 
+" speed up scrolling
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " move cursor to end of selection after yanking it
 vnoremap y ygv<Esc>`>
 " Y should yank until the end of line, for consistency with C, D
