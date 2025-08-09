@@ -73,13 +73,6 @@ vnoremap y ygv<Esc>`>
 " Y should yank until the end of line, for consistency with C, D
 nnoremap Y y$
 
-" Yank and paste from OS clipboard
-" nnoremap ,y "+y
-" vnoremap ,y "+y
-" nnoremap ,yy "+yy
-" nnoremap ,p "+p
-" vnoremap ,p "+p
-
 " have x (removes single character) not go into the default registry
 nnoremap x "_x
 " Make X an operator that removes without placing text in the default registry
