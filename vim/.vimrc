@@ -96,9 +96,6 @@ inoremap kj <Esc>
 vnoremap < <gv
 vnoremap > >gv
 
-" Execute macro saved in 'q' register
-nnoremap qj @q
-
 " set undo breakpoints when deleting text in insert mode such that the deleted text can easily be recovered.
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
