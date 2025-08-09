@@ -73,17 +73,17 @@ vnoremap y ygv<Esc>`>
 " Y should yank until the end of line, for consistency with C, D
 nnoremap Y y$
 
+" v-todo: temporarily disabling register remaps below until I get used to the default register experience.
 " have x (removes single character) not go into the default registry
-nnoremap x "_x
+" nnoremap x "_x
 " Make X an operator that removes without placing text in the default registry
-nmap X "_d
-nmap XX "_dd
-vmap X "_d
-vmap x "_d
-
+" nmap X "_d
+" nmap XX "_dd
+" vmap X "_d
+" vmap x "_d
 " don't yank to default register when changing something
-nnoremap c "xc
-xnoremap c "xc
+" nnoremap c "xc
+" xnoremap c "xc
 
 " Reselect last-pasted text
 " use cases: format, indent, comment
