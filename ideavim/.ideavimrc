@@ -112,6 +112,8 @@ map <leader>op <action>(ToggleLineBreakpoint)
 if &ide =~? 'JetBrains Rider'
 	let g:WhichKeyDesc_debug_unit_test = "<leader>ot Debug Unit Test Under Cursor"
 	map <leader>ot <action>(RiderUnitTestDebugContextAction)
+	let g:WhichKeyDesc_run_unit_test = "<leader>ol Run Unit Test Under Cursor"
+	map <leader>ol <action>(RiderUnitTestRunContextAction)
 endif
 
 " Jump around with easymotion
