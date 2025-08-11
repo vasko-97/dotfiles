@@ -237,5 +237,7 @@ map <leader>h5 <Action>(GotoHarpoon5)
 
 let g:WhichKeyDesc_reload_vim_rc = "<leader>9 Reload .ideavimrc"
 map <leader>9 :source ~/.ideavimrc<CR>
-let g:WhichKeyDesc_remove_search_highlight = "<leader><CR> Clear Search Highlights"
-map <leader><CR> :nohlsearch<CR>
+let g:WhichKeyDesc_remove_search_highlight = "<leader>1 Clear Search Highlights"
+map <leader>1 :nohlsearch<CR>
+
+" v-todo: add Rider select from caret to start/beginning of method (CTRL+SHIFT+[/]). Add better bind for next/prev method. Better keybinds for extract/inline variable.

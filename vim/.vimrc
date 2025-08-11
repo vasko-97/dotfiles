@@ -89,9 +89,6 @@ nnoremap Y y$
 " use cases: format, indent, comment
 nnoremap gp `[v`]
 
-inoremap jk <Esc>
-inoremap kj <Esc>
-
 " Easy visual indentation
 vnoremap < <gv
 vnoremap > >gv
