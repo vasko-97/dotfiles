@@ -61,7 +61,7 @@ vnoremap n nzzzv
 vnoremap N Nzzzv
 
 " After block yank and paste, move cursor to the end of operated text and don't override register
-vnoremap p "_dp`]
+" vnoremap p "_dp`]
 nnoremap p p`]
 
 " speed up scrolling
