@@ -5,6 +5,7 @@
 " https://towardsdatascience.com/the-essential-ideavim-remaps-291d4cd3971b/
 "" Base Settings
 "" ========================================================
+
 if has('unix')
 	source ~/.vimrc
 else
@@ -50,8 +51,12 @@ nmap <c-i> <Action>(Forward)
 map g<c-o> <c-o>
 map g<c-i> <c-i>
 
-nnoremap [[ :action MethodUp<CR>
-nnoremap ]] :action MethodDown<CR>
+" using older style :action with <CR> because new style of <action> seems to have a bug.. not sure what's going on but the below works.
+nmap [[ :action EditorCodeBlockStart<CR>
+nmap ]] :action EditorCodeBlockEnd<CR>
+vmap [[ :action EditorCodeBlockStartWithSelection<CR>
+vmap ]] :action EditorCodeBlockEndWithSelection<CR>
+
 map gn <Action>(GotoNextElementUnderCaretUsage)
 map gN <Action>(GotoPrevElementUnderCaretUsage)
 
@@ -192,6 +197,8 @@ let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
 let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
 let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
 let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
+let g:WhichKeyDesc_goto_nextmethod = "<leader>gj Next Method"
+let g:WhichKeyDesc_goto_previousmethod = "<leader>gk Previous Method"
 nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
@@ -199,6 +206,8 @@ nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
 nmap <leader>gf <Action>(Back)
 nmap <leader>gb <Action>(Forward)
+nmap <leader>gj <Action>(MethodDown)
+nmap <leader>gk <Action>(MethodUp)
 
 " Errors
 let g:WhichKeyDesc_errors = "<leader>e Error navigation"
