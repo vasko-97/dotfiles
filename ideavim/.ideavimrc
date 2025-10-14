@@ -1,3 +1,13 @@
+" v-todo
+" revise the g leader mappings.. don't need forward/back, gd can be used without leader. go to test? can add error nav here and free up e mappings
+" consider making use of g keybinds. e.g. use go to go to top of page, then gg for something else.
+" get vim working decently and in Git on windows
+" make zt, zz, zb more ergonomic with leader keys maybe
+" add better keybind for Ctrl+F12
+" set Rider keybinds to avoid hitting Enter too much.. e.g. when picking intellisense value
+" set good binding for Ctrl+W expanding highlight
+" how to remove popups without hitting Esc and entering normal mode?
+
 " Based on various different ideavimrcs. Resources: 
 " https://github.com/OptimusCrime/ideavim/blob/main/ideavimrc
 " massive collection: https://github.com/JetBrains/ideavim/discussions/303
@@ -249,4 +259,12 @@ map <leader>9 :source ~/.ideavimrc<CR>
 let g:WhichKeyDesc_remove_search_highlight = "<leader>1 Clear Search Highlights"
 map <leader>1 :nohlsearch<CR>
 
+" should be mapped to Up/Down in IDE to enable navigating menus from home row
+sethandler <c-j> a:ide
+sethandler <c-k> a:ide
+
+" should be set to Editor Choose Lookup Item in the IDE
+sethandler <c-l> a:ide
+
 " v-todo: add Rider select from caret to start/beginning of method (CTRL+SHIFT+[/]). Add better bind for next/prev method. Better keybinds for extract/inline variable.
+" v-todo: search "Editor Choose Lookup" in Rider to see what else is worth remapping
