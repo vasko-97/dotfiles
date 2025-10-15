@@ -83,4 +83,43 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# todo: migrate rest of bashrc
+alias lir='locate -ir'
+alias cs='cht.sh'
+
+# disable CTRL+S/CTRL+Q garbage so I can use CTRL+S for history forward search
+stty -ixon
+
+
+everything() {
+     command -v fzf >/dev/null || { echo "fzf not installed"; return 1; }
+     
+     selected_file=$(lir "$1" | fzf)
+     [ -n "$selected_file" ] && xdg-open "$selected_file"
+}
+alias evr='everything'
+
+# Have less display colours
+# from: https://wiki.archlinux.org/index.php/Color_output_in_console#man
+export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
+export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
+export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
+export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
+export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
+export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+ 
+export PROMPT_COMMAND='history -a; history -n'
+ 
+ mvc() {
+ 	mullvad connect
+ 	mullvad lockdown-mode set on
+ }
+ 
+ mvd() {
+     mullvad disconnect
+     mullvad lockdown-mode set off
+ }
