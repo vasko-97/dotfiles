@@ -50,12 +50,6 @@ everything() {
     selected_file=$(lir "$1" | fzf)
     [ -n "$selected_file" ] && xdg-open "$selected_file"
 }
-
-
-# little Linux version of Windows' everything
-#everything() {
-    #lir "$1" | fzf | xargs xdg-open
-#}
 alias evr='everything'
 
 # Have less display colours
