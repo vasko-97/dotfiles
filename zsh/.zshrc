@@ -56,8 +56,6 @@ bindkey -M viins '^P' up-line-or-history
 bindkey -M vicmd '^P' up-line-or-history
 bindkey -M viins '^N' down-line-or-history
 bindkey -M vicmd '^N' down-line-or-history
-# todo: instead look into ZLE's powerful widgets like history-incremental-pattern-search-backward, history-beginning-search-backward, or plugins like zsh-history-substring-search. See `zle -la`.
-bindkey -M viins '^R' history-incremental-search-backward
 # todo: instead look into more powerful zsh native methods like zsh-autosuggestions
 # note \e might not be the right escape sequence for Alt on all terminals
 bindkey -M viins '\e.' insert-last-word
@@ -109,9 +107,17 @@ export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
  
+# Set up fzf key bindings and fuzzy completion 
+eval "$(fzf --zsh)"
+# Restore Ctrl+R as redo as it was overwritten by the above fzf setup
+bindkey -M vicmd '^R' redo
+bindkey -M viins '^R' redo
+#  Use Ctrl+S instead for fzf's history
+# todo: also look into ZLE's powerful widgets like history-incremental-pattern-search-backward, history-beginning-search-backward, or plugins like zsh-history-substring-search. See `zle -la`.
+bindkey -M vicmd '^S' fzf-history-widget
+bindkey -M viins '^S' fzf-history-widget
+
 export PROMPT_COMMAND='history -a; history -n'
  
  mvc() {
