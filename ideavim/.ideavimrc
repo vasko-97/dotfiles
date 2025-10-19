@@ -270,3 +270,5 @@ sethandler <c-l> a:ide
 " v-todo: search "Editor Choose Lookup" in Rider to see what else is worth remapping
 " v-todo: think about remapping R to something useful because the default bind is not useful (maybe map R to ciw). Same for K which goes to man page of word under cursor (only useful if writing C), maybe map to show documentation popup.
 " v-todo: consider mapping <leader>gu to gr (go to references) instead
+" v-todo: consider remapping H, M, L. They're not that useful because if you can see where you want to go on the screen then there are better commands to get there
+" v-todo: I don't use % that much.. consider remapping it as well
