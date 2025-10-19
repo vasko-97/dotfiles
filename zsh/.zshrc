@@ -48,6 +48,8 @@ SAVEHIST=1000000
 setopt histignorespace
 # END HISTORY CONFIG
 
+EDITOR=/usr/bin/vim
+
 # enable vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -80,6 +82,24 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Enable text objects like ci", ci', ci{, etc. which zsh vi mode does not include by default
+autoload -U select-quoted select-bracketed
+zle -N select-quoted
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`,\(,\),\[,\],\<,\>,\{,\}}; do
+    bindkey -M $m $c select-quoted
+  done
+  for c in {a,i}{\(,\),\[,\],\<,\>,\{,\}}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
+
+# Missing from zsh vi mode by default
+bindkey -M vicmd '_' vi-first-non-blank
+# I'm used to typing Vd quickly to delete a line, which often comes out as VD insteads. VD still deletes a line fine in Vim by default, but in zsh I need to configure the binding explicitly.
+bindkey -M visual 'D' kill-region
 
 alias lir='locate -ir'
 alias cs='cht.sh'
