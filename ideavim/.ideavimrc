@@ -268,3 +268,4 @@ sethandler <c-l> a:ide
 
 " v-todo: add Rider select from caret to start/beginning of method (CTRL+SHIFT+[/]). Add better bind for next/prev method. Better keybinds for extract/inline variable.
 " v-todo: search "Editor Choose Lookup" in Rider to see what else is worth remapping
+" v-todo: think about remapping R to something useful because the default bind is not useful
