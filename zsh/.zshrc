@@ -100,6 +100,22 @@ done
 bindkey -M vicmd '_' vi-first-non-blank
 # I'm used to typing Vd quickly to delete a line, which often comes out as VD insteads. VD still deletes a line fine in Vim by default, but in zsh I need to configure the binding explicitly.
 bindkey -M visual 'D' kill-region
+# fix Backspace and Ctrl+H. I don't know why but when I go up history and then insert mode and then try to use this to delete backwards, it gives the boink sound instead of working.
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^H' backward-delete-char
+
+
+# enable Ctrl+O in insert mode to run one command in command mode. From https://unix.stackexchange.com/questions/628423/make-one-normal-mode-command-while-in-insert-mode-in-zshs-vi-mode.
+function vi-run-one-cmd-command () {
+  local REPLY
+
+  # Read the next keystroke, look it up in the `vicmd` keymap and, if successful,
+  # evalute the widget bound to it in the context of the `vicmd` keymap.
+  zle .read-command -K vicmd && 
+      zle $REPLY -K vicmd
+}
+zle -N vi-run-one-cmd-command
+bindkey -v '^O' vi-run-one-cmd-command
 
 alias lir='locate -ir'
 alias cs='cht.sh'
