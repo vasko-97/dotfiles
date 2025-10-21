@@ -274,3 +274,4 @@ sethandler <c-l> a:ide
 " v-todo: I don't use % that much.. consider remapping it as well
 " v-todo: automate fixing indentation when pasting, e.g. pasting a single line from outside an if block into an if block
 " v-todo: map g; to rider's go to last edit location
+" v-todo: add LinqPad and NCrunch to list of tools to learn
