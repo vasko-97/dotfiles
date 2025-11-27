@@ -7,6 +7,7 @@
 " set Rider keybinds to avoid hitting Enter too much.. e.g. when picking intellisense value
 " set good binding for Ctrl+W expanding highlight
 " how to remove popups without hitting Esc and entering normal mode?
+" set binding for RedesignedRunConfigurationSelector
 
 " Based on various different ideavimrcs. Resources: 
 " https://github.com/OptimusCrime/ideavim/blob/main/ideavimrc
@@ -274,4 +275,4 @@ sethandler <c-l> a:ide
 " v-todo: I don't use % that much.. consider remapping it as well
 " v-todo: automate fixing indentation when pasting, e.g. pasting a single line from outside an if block into an if block
 " v-todo: map g; to rider's go to last edit location
-" v-todo: try to get nice vim experience on powershell
+" v-todo: bewtter mapping to open test window
