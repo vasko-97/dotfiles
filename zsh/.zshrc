@@ -1,4 +1,3 @@
-# test
 # .zshrc
 autoload -Uz compinit promptinit
 compinit -C
