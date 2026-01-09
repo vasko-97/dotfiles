@@ -275,4 +275,7 @@ sethandler <c-l> a:ide
 " v-todo: I don't use % that much.. consider remapping it as well
 " v-todo: automate fixing indentation when pasting, e.g. pasting a single line from outside an if block into an if block
 " v-todo: map g; to rider's go to last edit location
-" v-todo: bewtter mapping to open test window
+" v-todo: better mapping to open test window
+" v-todo: raise ticket with JetBrains to get them to have a working general remap for Enter
+" v-todo: set up good navigation bar action keybinds.. if it's needed with nerdtree anyway
+" v-todo: set up vimrc such that D, ciw, C, S etc. don't go to the paste buffer
