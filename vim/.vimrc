@@ -96,3 +96,10 @@ vnoremap > >gv
 " set undo breakpoints when deleting text in insert mode such that the deleted text can easily be recovered.
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
+
+" https://github.com/stoeffel/.dotfiles/blob/master/vim/visual-at.vim
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+function! ExecuteMacroOverVisualRange()
+	  echo "@".getcmdline()
+	    execute ":'<,'>normal @".nr2char(getchar())
+endfunction
