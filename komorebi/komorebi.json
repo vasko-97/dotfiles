@@ -85,15 +85,9 @@
           ]
         },
         {
+          // ideally this would be a "catch-all" workspace where any other app gets moved automatically. But unfortunately komorebi does not support this easily.
           "name": "6 - Everything Else",
-          "layout": "Columns",
-          "workspace_rules": [
-            {
-              "kind": "Exe",
-              "id": "^((?!brave|rider64|datagrip64|explorer|WindowsTerminal|KeePassXC|Spotify|ms-teams|olk).*)$",
-              "matching_strategy": "Regex"
-            }
-          ]
+          "layout": "Columns"
         }
       ]
     }

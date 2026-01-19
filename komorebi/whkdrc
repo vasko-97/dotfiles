@@ -14,21 +14,17 @@ alt + i                 : komorebic toggle-shortcuts
 # alt + f                 : if ($wshell.AppActivate('Firefox') -eq $False) { start firefox }
 # alt + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
 
-alt + q                 : komorebic close
-alt + m                 : komorebic minimize
+ctrl + alt + q                 : komorebic close
+alt + m                        : komorebic minimize
 
 # Focus windows
-alt + h                 : komorebic focus left
-alt + j                 : komorebic focus down
-alt + k                 : komorebic focus up
 alt + l                 : komorebic focus right
-alt + shift + oem_4     : komorebic cycle-focus previous # oem_4 is [
-alt + shift + oem_6     : komorebic cycle-focus next # oem_6 is ]
+alt + h                 : komorebic focus left
+alt + k                 : komorebic cycle-focus previous
+alt + j                 : komorebic cycle-focus next
 
 # Move windows
 alt + shift + h         : komorebic move left
-alt + shift + j         : komorebic move down
-alt + shift + k         : komorebic move up
 alt + shift + l         : komorebic move right
 alt + shift + return    : komorebic promote
 
@@ -48,16 +44,16 @@ alt + shift + oem_plus  : komorebic resize-axis vertical increase
 alt + shift + oem_minus : komorebic resize-axis vertical decrease
 
 # Manipulate windows
-alt + t                 : komorebic toggle-float
-alt + shift + f         : komorebic toggle-monocle
+ctrl + alt + t                 : komorebic toggle-float # v-todo: consider reusing this mapping for something more useful
+ctrl + alt + f                 : komorebic toggle-monocle
 
 # Window manager options
-alt + shift + r         : komorebic retile
+ctrl + alt + r          : komorebic retile
 alt + p                 : komorebic toggle-pause
 
 # Layouts
-alt + x                 : komorebic flip-layout horizontal
-alt + y                 : komorebic flip-layout vertical
+ctrl + alt + x                 : komorebic focus-last-workspace
+ctrl + alt + y                 : komorebic move-to-workspace 6 # a more ergonomic mappings to move stuff to the "catch-all" workspace, which is workspace 6
 
 # Workspaces
 ctrl + alt + 1                 : komorebic focus-workspace 0
@@ -68,6 +64,8 @@ ctrl + alt + 5                 : komorebic focus-workspace 4
 alt + 6                        : komorebic focus-workspace 5
 alt + 7                        : komorebic focus-workspace 6
 alt + 8                        : komorebic focus-workspace 7
+ctrl + alt + s                 : komorebic cycle-workspace next
+ctrl + alt + a                 : komorebic cycle-workspace previous
 
 # Move windows across workspaces
 alt + shift + 1         : komorebic move-to-workspace 0
@@ -82,3 +80,5 @@ alt + shift + 8         : komorebic move-to-workspace 7
 # v-todo: add `alt + shift + s` to move window to the workspace to the right etc.
 # v-todo: e.g. win + 1                 : komorebic eager-focus firefox.exe -- https://lgug2z.github.io/komorebi/usage/focusing-windows.html
 # v-todo: e.g. alt + return            : komorebic promote-focus           -- https://lgug2z.github.io/komorebi/usage/focusing-windows.html
+# v-todo: use AHK where needed to avoid app keystroke conflicts.. e.g. Git Extension overrides Alt+Y with no ability to disable it
+# v-todo: create binding or script to start komorebi and then after komorebi has successfully started run FocusOpenWindows.ps1
