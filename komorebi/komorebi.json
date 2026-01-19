@@ -88,6 +88,18 @@
           // ideally this would be a "catch-all" workspace where any other app gets moved automatically. But unfortunately komorebi does not support this easily.
           "name": "6 - Everything Else",
           "layout": "Columns"
+        },
+        {
+          "name": "7 - Misc",
+          "layout": "Columns"
+        },
+        {
+          "name": "8 - Misc",
+          "layout": "Columns"
+        },
+        {
+          "name": "9 - Misc",
+          "layout": "Columns"
         }
       ]
     }

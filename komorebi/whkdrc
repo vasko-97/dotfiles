@@ -68,14 +68,16 @@ ctrl + alt + s                 : komorebic cycle-workspace next
 ctrl + alt + a                 : komorebic cycle-workspace previous
 
 # Move windows across workspaces
-alt + shift + 1         : komorebic move-to-workspace 0
-alt + shift + 2         : komorebic move-to-workspace 1
-alt + shift + 3         : komorebic move-to-workspace 2
-alt + shift + 4         : komorebic move-to-workspace 3
-alt + shift + 5         : komorebic move-to-workspace 4
-alt + shift + 6         : komorebic move-to-workspace 5
-alt + shift + 7         : komorebic move-to-workspace 6
-alt + shift + 8         : komorebic move-to-workspace 7
+alt + shift + 1                : komorebic move-to-workspace 0
+alt + shift + 2                : komorebic move-to-workspace 1
+alt + shift + 3                : komorebic move-to-workspace 2
+alt + shift + 4                : komorebic move-to-workspace 3
+alt + shift + 5                : komorebic move-to-workspace 4
+alt + shift + 6                : komorebic move-to-workspace 5
+alt + shift + 7                : komorebic move-to-workspace 6
+alt + shift + 8                : komorebic move-to-workspace 7
+ctrl + alt + shift + s         : komorebic cycle-move-to-workspace next
+ctrl + alt + shift + a         : komorebic cycle-move-to-workspace previous
 
 # v-todo: add `alt + shift + s` to move window to the workspace to the right etc.
 # v-todo: e.g. win + 1                 : komorebic eager-focus firefox.exe -- https://lgug2z.github.io/komorebi/usage/focusing-windows.html
