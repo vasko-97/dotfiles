@@ -1,5 +1,7 @@
 .shell pwsh
 
+# Note that the combo ctrl+alt is a way to map AltGr/Right Alt.
+
 # Reload whkd configuration
 # alt + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
 alt + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
@@ -58,14 +60,14 @@ alt + x                 : komorebic flip-layout horizontal
 alt + y                 : komorebic flip-layout vertical
 
 # Workspaces
-alt + 1                 : komorebic focus-workspace 0
-alt + 2                 : komorebic focus-workspace 1
-alt + 3                 : komorebic focus-workspace 2
-alt + 4                 : komorebic focus-workspace 3
-alt + 5                 : komorebic focus-workspace 4
-alt + 6                 : komorebic focus-workspace 5
-alt + 7                 : komorebic focus-workspace 6
-alt + 8                 : komorebic focus-workspace 7
+ctrl + alt + 1                 : komorebic focus-workspace 0
+ctrl + alt + 2                 : komorebic focus-workspace 1
+ctrl + alt + 3                 : komorebic focus-workspace 2
+ctrl + alt + 4                 : komorebic focus-workspace 3
+ctrl + alt + 5                 : komorebic focus-workspace 4
+alt + 6                        : komorebic focus-workspace 5
+alt + 7                        : komorebic focus-workspace 6
+alt + 8                        : komorebic focus-workspace 7
 
 # Move windows across workspaces
 alt + shift + 1         : komorebic move-to-workspace 0
@@ -76,3 +78,7 @@ alt + shift + 5         : komorebic move-to-workspace 4
 alt + shift + 6         : komorebic move-to-workspace 5
 alt + shift + 7         : komorebic move-to-workspace 6
 alt + shift + 8         : komorebic move-to-workspace 7
+
+# v-todo: add `alt + shift + s` to move window to the workspace to the right etc.
+# v-todo: e.g. win + 1                 : komorebic eager-focus firefox.exe -- https://lgug2z.github.io/komorebi/usage/focusing-windows.html
+# v-todo: e.g. alt + return            : komorebic promote-focus           -- https://lgug2z.github.io/komorebi/usage/focusing-windows.html

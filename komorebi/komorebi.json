@@ -1,3 +1,4 @@
+// see for more info: https://deepwiki.com/LGUG2Z/komorebi/5.2-application-rules-and-matching
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.38/schema.json",
   "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
@@ -18,32 +19,81 @@
     {
       "workspaces": [
         {
-          "name": "I",
-          "layout": "BSP"
+          "name": "1 - Browser",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "brave.exe",
+              "kind": "Exe"
+            }
+          ]
         },
         {
-          "name": "II",
-          "layout": "VerticalStack"
+          "name": "2 - JetBrains",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "rider64.exe",
+              "kind": "Exe"
+            },
+            {
+              "id": "datagrip64.exe",
+              "kind": "Exe"
+            }
+          ]
         },
         {
-          "name": "III",
-          "layout": "HorizontalStack"
+          "name": "3 - File Explorer/Terminal",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "explorer.exe",
+              "kind": "Exe"
+            },
+            {
+              "id": "WindowsTerminal.exe",
+              "kind": "Exe"
+            }
+          ]
         },
         {
-          "name": "IV",
-          "layout": "UltrawideVerticalStack"
+          "name": "4 - Keepass/Spotify",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "KeePassXC.exe",
+              "kind": "Exe"
+            },
+            {
+              "id": "Spotify.exe",
+              "kind": "Exe"
+            }
+          ]
         },
         {
-          "name": "V",
-          "layout": "Rows"
+          "name": "5 - Teams/Outlook",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "ms-teams.exe",
+              "kind": "Exe"
+            },
+            {
+              "id": "olk.exe",
+              "kind": "Exe"
+            }
+          ]
         },
         {
-          "name": "VI",
-          "layout": "Grid"
-        },
-        {
-          "name": "VII",
-          "layout": "RightMainVerticalStack"
+          "name": "6 - Everything Else",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "^((?!brave|rider64|datagrip64|explorer|WindowsTerminal|KeePassXC|Spotify|ms-teams|olk).*)$",
+              "matching_strategy": "Regex"
+            }
+          ]
         }
       ]
     }
