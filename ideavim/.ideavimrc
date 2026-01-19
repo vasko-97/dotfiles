@@ -279,3 +279,4 @@ sethandler <c-l> a:ide
 " v-todo: raise ticket with JetBrains to get them to have a working general remap for Enter
 " v-todo: set up good navigation bar action keybinds.. if it's needed with nerdtree anyway
 " v-todo: set up vimrc such that D, ciw, C, S etc. don't go to the paste buffer
+" idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
