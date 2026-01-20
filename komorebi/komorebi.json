@@ -1,11 +1,10 @@
-// see for more info: https://deepwiki.com/LGUG2Z/komorebi/5.2-application-rules-and-matching
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.38/schema.json",
   "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
-  "default_workspace_padding": 10,
-  "default_container_padding": 10,
+  "default_workspace_padding": 3,
+  "default_container_padding": 3,
   "border": true,
   "border_width": 8,
   "border_offset": -1,
