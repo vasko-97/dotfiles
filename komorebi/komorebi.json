@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.38/schema.json",
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.39/schema.json",
   "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
@@ -7,6 +7,14 @@
   "default_container_padding": 3,
   "border": true,
   "border_width": 8,
+  "manage_rules": [
+    {
+      // not sure why but KeePassXC does not get managed unless specified here explicitly
+      "kind": "Exe",
+      "id": "KeePassXC.exe",
+      "matching_strategy": "Equals"
+    }
+  ],
   "border_offset": -1,
   "theme": {
     "palette": "Base16",
@@ -84,7 +92,6 @@
           ]
         },
         {
-          // ideally this would be a "catch-all" workspace where any other app gets moved automatically. But unfortunately komorebi does not support this easily.
           "name": "6 - Everything Else",
           "layout": "Columns"
         },
