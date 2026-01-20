@@ -36,49 +36,7 @@
           ]
         },
         {
-          "name": "2 - JetBrains",
-          "layout": "Columns",
-          "workspace_rules": [
-            {
-              "id": "rider64.exe",
-              "kind": "Exe"
-            },
-            {
-              "id": "datagrip64.exe",
-              "kind": "Exe"
-            }
-          ]
-        },
-        {
-          "name": "3 - File Explorer/Terminal",
-          "layout": "Columns",
-          "workspace_rules": [
-            {
-              "id": "explorer.exe",
-              "kind": "Exe"
-            },
-            {
-              "id": "WindowsTerminal.exe",
-              "kind": "Exe"
-            }
-          ]
-        },
-        {
-          "name": "4 - Keepass/Spotify",
-          "layout": "Columns",
-          "workspace_rules": [
-            {
-              "id": "KeePassXC.exe",
-              "kind": "Exe"
-            },
-            {
-              "id": "Spotify.exe",
-              "kind": "Exe"
-            }
-          ]
-        },
-        {
-          "name": "5 - Teams/Outlook",
+          "name": "2 - Communications",
           "layout": "Columns",
           "workspace_rules": [
             {
@@ -92,12 +50,58 @@
           ]
         },
         {
-          "name": "6 - Everything Else",
-          "layout": "Columns"
+          "name": "3 - Rider",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "rider64.exe",
+              "kind": "Exe"
+            }
+          ]
         },
         {
-          "name": "7 - Misc",
-          "layout": "Columns"
+          "name": "4 - DataGrip",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "datagrip64.exe",
+              "kind": "Exe"
+            }
+          ]
+        },
+        {
+          "name": "5 - Terminal",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "WindowsTerminal.exe",
+              "kind": "Exe"
+            }
+          ]
+        },
+        {
+          "name": "6 - Keepass/Spotify",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "KeePassXC.exe",
+              "kind": "Exe"
+            },
+            {
+              "id": "Spotify.exe",
+              "kind": "Exe"
+            }
+          ]
+        },
+        {
+          "name": "7 - File Explorer",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "explorer.exe",
+              "kind": "Exe"
+            }
+          ]
         },
         {
           "name": "8 - Misc",
