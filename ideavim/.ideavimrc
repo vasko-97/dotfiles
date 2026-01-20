@@ -280,3 +280,4 @@ sethandler <c-l> a:ide
 " v-todo: set up good navigation bar action keybinds.. if it's needed with nerdtree anyway
 " v-todo: set up vimrc such that D, ciw, C, S etc. don't go to the paste buffer
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
+" v-todo: work pc: lf, fzf+everything for opening things, get rid of sublime, flow launcher, revisit workspace app config.. ideally one app per workspace, learn Teams keybinds
