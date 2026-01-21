@@ -23,6 +23,18 @@
     "bar_accent": "Base0D"
   },
   "monitors": [
+//    {
+//      "workspaces": [
+//        {
+//          "name": "1b - Misc",
+//          "layout": "Columns"
+//        },
+//        {
+//          "name": "2b - Misc",
+//          "layout": "Columns"
+//        }
+//      ]
+//    },
     {
       "workspaces": [
         {
@@ -104,9 +116,16 @@
           ]
         },
         {
-          "name": "8 - Misc",
-          "layout": "Columns"
-        },
+          "name": "8 - Sublime",
+          "layout": "Columns",
+          "workspace_rules": [
+            {
+              "id": "sublime_text.exe",
+              "kind": "Exe"
+            }
+          ]
+        }
+      ,
         {
           "name": "9 - Misc",
           "layout": "Columns"
