@@ -98,6 +98,7 @@ Komorebic(cmd) {
 !6::Komorebic("focus-workspace 5")
 !7::Komorebic("focus-workspace 6")
 !8::Komorebic("focus-workspace 7")
+!9::Komorebic("focus-workspace 8")
 
 ^!s::Komorebic("cycle-workspace next")
 ^!a::Komorebic("cycle-workspace previous")
@@ -114,6 +115,7 @@ Komorebic(cmd) {
 !+6::Komorebic("move-to-workspace 5")
 !+7::Komorebic("move-to-workspace 6")
 !+8::Komorebic("move-to-workspace 7")
+!+9::Komorebic("move-to-workspace 8")
 
 ^!+s::Komorebic("cycle-move-to-workspace next")
 ^!+a::Komorebic("cycle-move-to-workspace previous")
