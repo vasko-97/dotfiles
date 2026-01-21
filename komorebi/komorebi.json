@@ -5,6 +5,15 @@
   "cross_monitor_move_behaviour": "Insert",
   "default_workspace_padding": 3,
   "default_container_padding": 3,
+  // this ties laptop monitor (serial number 0) to index 0 and external monitor (serial number 201NTCZ9A147) to index 1
+  "display_index_preferences": {
+    "0": "0",
+    "1": "201NTCZ9A147"
+  },
+  "bar_configurations": [
+        "komorebi.bar.laptop-monitor.json",
+        "komorebi.bar.large-monitor.json"
+  ],
   "border": true,
   "border_width": 8,
   "manage_rules": [
@@ -23,18 +32,18 @@
     "bar_accent": "Base0D"
   },
   "monitors": [
-//    {
-//      "workspaces": [
-//        {
-//          "name": "1b - Misc",
-//          "layout": "Columns"
-//        },
-//        {
-//          "name": "2b - Misc",
-//          "layout": "Columns"
-//        }
-//      ]
-//    },
+    {
+      "workspaces": [
+        {
+          "name": "1b - Misc",
+          "layout": "Columns"
+        },
+        {
+          "name": "2b - Misc",
+          "layout": "Columns"
+        }
+      ]
+    },
     {
       "workspaces": [
         {
@@ -124,8 +133,7 @@
               "kind": "Exe"
             }
           ]
-        }
-      ,
+        },
         {
           "name": "9 - Misc",
           "layout": "Columns"
