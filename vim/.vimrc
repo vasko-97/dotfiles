@@ -74,8 +74,7 @@ vnoremap y ygv<Esc>`>
 nnoremap Y y$
 
 " v-todo: temporarily disabling register remaps below until I get used to the default register experience.
-" have x (removes single character) not go into the default registry
-" nnoremap x "_x
+" v-todo: do something reasonable: https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c
 " Make X an operator that removes without placing text in the default registry
 " nmap X "_d
 " nmap XX "_dd
@@ -84,6 +83,10 @@ nnoremap Y y$
 " don't yank to default register when changing something
 " nnoremap c "xc
 " xnoremap c "xc
+nnoremap x "_x
+
+" make R actually useful
+nmap R ciw
 
 " Reselect last-pasted text
 " use cases: format, indent, comment

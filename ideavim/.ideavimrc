@@ -63,10 +63,19 @@ map g<c-o> <c-o>
 map g<c-i> <c-i>
 
 " using older style :action with <CR> because new style of <action> seems to have a bug.. not sure what's going on but the below works.
-nmap [[ :action EditorCodeBlockStart<CR>
-nmap ]] :action EditorCodeBlockEnd<CR>
-vmap [[ :action EditorCodeBlockStartWithSelection<CR>
-vmap ]] :action EditorCodeBlockEndWithSelection<CR>
+" nmap [[ :action EditorCodeBlockStart<CR>
+" nmap ]] :action EditorCodeBlockEnd<CR>
+
+nmap ]] <Action>(MethodDown)
+nmap [[ <Action>(MethodUp)
+
+nmap g; <Action>(JumpToLastChange)
+
+" by default K shows man page of word under cursor which is useful for programming C. Remap to make it more useful in general.
+map K <action>(ShowHoverInfo)
+
+" vmap [[ :action EditorCodeBlockStartWithSelection<CR>
+" vmap ]] :action EditorCodeBlockEndWithSelection<CR>
 
 map gn <Action>(GotoNextElementUnderCaretUsage)
 map gN <Action>(GotoPrevElementUnderCaretUsage)
@@ -80,25 +89,27 @@ map gN <Action>(GotoPrevElementUnderCaretUsage)
 
 " Misc
 let g:WhichKeyDesc_misc = "<leader>m Misc"
-let g:WhichKeyDesc_leader = "<leader>mx Open Project View"
+let g:WhichKeyDesc_toggle_project_view = "<leader>mx Open Project View"
+let g:WhichKeyDesc_focus_project_view = "<leader>mf Focus Project View"
+let g:WhichKeyDesc_test_window = "<leader>mt Open Test Window"
 let g:WhichKeyDesc_comment = "<leader>mc Comment line"
-let g:WhichKeyDesc_show_in_project_view = "<leader>me Show in Project View"
+let g:WhichKeyDesc_find_in_project_view = "<leader>me Find in Project View"
 let g:WhichKeyDesc_show_parameter_info = "<leader>mp Show Parameter Info"
 let g:WhichKeyDesc_reformat_code = "<leader>mr Reformat Code"
 let g:WhichKeyDesc_toggle_wrap = "<leader>mw Toggle Soft Wrap"
 let g:WhichKeyDesc_hide_all_windows = "<leader>mh Toggle Hide All Windows"
-let g:WhichKeyDesc_show_hover_info = "<leader>mi Show Hover Info"
 let g:WhichKeyDesc_move_file = "<leader>mv Move File (Fuzzier)"
 let g:WhichKeyDesc_switcher = "<leader>ms Open Switcher"
 let g:WhichKeyDesc_select_whole_file = "<leader>ma Select Whole File"
 map <leader>mx :NERDTreeToggle<CR>
+map <leader>mf :NERDTreeFocus<CR>
+map <leader>me :NERDTreeFind<CR>
+map <leader>mt <action>(ActivateUnitTestsToolWindow)
 map <leader>mc <action>(CommentByLineComment)
-map <leader>me <action>(SelectInProjectView)
 map <leader>mp <action>(ParameterInfo)
 map <leader>mr <action>(ReformatCode)
 map <leader>mw <action>(EditorToggleUseSoftWraps)
 map <leader>mh <action>(HideAllWindows)
-map <leader>mi <action>(ShowHoverInfo)
 map <leader>mv <action>(com.mituuz.fuzzier.FuzzyMover)
 map <leader>ms <action>(Switcher)
 map <Leader>ma ggVG
@@ -208,8 +219,6 @@ let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
 let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
 let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
 let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
-let g:WhichKeyDesc_goto_nextmethod = "<leader>gj Next Method"
-let g:WhichKeyDesc_goto_previousmethod = "<leader>gk Previous Method"
 nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
@@ -217,8 +226,6 @@ nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
 nmap <leader>gf <Action>(Back)
 nmap <leader>gb <Action>(Forward)
-nmap <leader>gj <Action>(MethodDown)
-nmap <leader>gk <Action>(MethodUp)
 
 " Errors
 let g:WhichKeyDesc_errors = "<leader>e Error navigation"
@@ -267,17 +274,13 @@ sethandler <c-k> a:ide
 " should be set to Editor Choose Lookup Item in the IDE
 sethandler <c-l> a:ide
 
-" v-todo: add Rider select from caret to start/beginning of method (CTRL+SHIFT+[/]). Add better bind for next/prev method. Better keybinds for extract/inline variable.
-" v-todo: search "Editor Choose Lookup" in Rider to see what else is worth remapping
-" v-todo: think about remapping R to something useful because the default bind is not useful (maybe map R to ciw). Same for K which goes to man page of word under cursor (only useful if writing C), maybe map to show documentation popup.
-" v-todo: consider mapping <leader>gu to gr (go to references) instead
+" v-todo: Better keybinds for extract/inline variable.
 " v-todo: consider remapping H, M, L. They're not that useful because if you can see where you want to go on the screen then there are better commands to get there
-" v-todo: I don't use % that much.. consider remapping it as well
-" v-todo: automate fixing indentation when pasting, e.g. pasting a single line from outside an if block into an if block
-" v-todo: map g; to rider's go to last edit location
-" v-todo: better mapping to open test window
-" v-todo: raise ticket with JetBrains to get them to have a working general remap for Enter
-" v-todo: set up good navigation bar action keybinds.. if it's needed with nerdtree anyway
-" v-todo: set up vimrc such that D, ciw, C, S etc. don't go to the paste buffer
-" idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
+" v-todo: try to get used to gp<leader>mr to reformat just-pasted code.
+" v-todo: make more extensive use of NERDTree set up good navigation bar action keybinds.. https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+" v-todo: make more extensive use of Harpoon
+" v-todo: figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
 " v-todo: work pc: lf, fzf+everything for opening things, get rid of sublime, flow launcher, revisit workspace app config.. ideally one app per workspace, learn Teams keybinds
+
+" scratch path (paste this in idea.properties file to set scratch directory)
+" idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches

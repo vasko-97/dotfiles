@@ -11,7 +11,7 @@ Komorebic(cmd) {
 ; Reload / toggle
 ; --------------------------------
 
-; v-todo: consider adding key to reload AHK like whkd has
+; todo: consider adding key to reload AHK like whkd has
 !+o::Komorebic("reload-configuration")
 !+i::Komorebic("toggle-shortcuts")
 
