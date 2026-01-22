@@ -11,13 +11,9 @@ Komorebic(cmd) {
 ; Reload / toggle
 ; --------------------------------
 
-!o::{
-    RunWait("taskkill /f /im whkd.exe", , "Hide")
-    RunWait('powershell -WindowStyle Hidden -Command "Start-Process whkd -WindowStyle hidden"', , "Hide")
-}
-
+; v-todo: consider adding key to reload AHK like whkd has
 !+o::Komorebic("reload-configuration")
-!i::Komorebic("toggle-shortcuts")
+!+i::Komorebic("toggle-shortcuts")
 
 ; --------------------------------
 ; Window actions
@@ -32,8 +28,10 @@ Komorebic(cmd) {
 
 !h::Komorebic("focus left")
 !l::Komorebic("focus right")
-!k::Komorebic("cycle-focus previous")
-!j::Komorebic("cycle-focus next")
+!j::Komorebic("focus down")
+!k::Komorebic("focus up")
+!o::Komorebic("cycle-focus previous")
+!i::Komorebic("cycle-focus next")
 
 ; --------------------------------
 ; Move windows
@@ -69,7 +67,7 @@ Komorebic(cmd) {
 ; --------------------------------
 
 ^!t::Komorebic("toggle-float")
-^!f::Komorebic("toggle-monocle")
+!u::Komorebic("toggle-monocle")
 
 ; --------------------------------
 ; Window manager options
@@ -83,7 +81,7 @@ Komorebic(cmd) {
 ; --------------------------------
 
 ^!x::Komorebic("focus-last-workspace")
-!y::Komorebic("move-to-workspace 5")
+!y::Komorebic("move-to-workspace 8")
 
 ; --------------------------------
 ; Workspaces (focus)
