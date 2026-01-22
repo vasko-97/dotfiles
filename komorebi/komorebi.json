@@ -5,14 +5,15 @@
   "cross_monitor_move_behaviour": "Insert",
   "default_workspace_padding": 3,
   "default_container_padding": 3,
-  // this ties laptop monitor (serial number 0) to index 0 and external monitor (serial number 201NTCZ9A147) to index 1
-  "display_index_preferences": {
-    "0": "0",
-    "1": "201NTCZ9A147"
-  },
+  // this ties laptop monitor (serial number 0) to index 0 and external monitor (serial number 201NTCZ9A147 for one at work) to index 1
+  // somewhat recommended by komorebi author but I'll keep it commented for now because then it works both at home and at work without having to change the external monitor serial number
+//  "display_index_preferences": {
+//    "0": "0",
+//    "1": "201NTCZ9A147"
+//  },
   "bar_configurations": [
-        "komorebi.bar.laptop-monitor.json",
-        "komorebi.bar.large-monitor.json"
+        "$Env:KOMOREBI_CONFIG_HOME\\komorebi.bar.laptop-monitor.json",
+        "$Env:KOMOREBI_CONFIG_HOME\\komorebi.bar.large-monitor.json"
   ],
   "border": true,
   "border_width": 8,
