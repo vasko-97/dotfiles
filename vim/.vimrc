@@ -106,3 +106,6 @@ function! ExecuteMacroOverVisualRange()
 	  echo "@".getcmdline()
 	    execute ":'<,'>normal @".nr2char(getchar())
 endfunction
+
+" a macro to easily turn "one\ntwo\nthreee" into "'one','two','three" for use in SQL WHERE clauses
+let @q="_}kI'€ý5$}k$A',€ý5V}kJ$x"
