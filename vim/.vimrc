@@ -44,13 +44,13 @@ let &t_SR = "\e[4 q"   " Replace mode: underline
 "" Key mappings
 "" ========================================================
 
-" GNU readline style keymaps for command line editing
-cnoremap <C-A> <Home>
-cnoremap <C-F> <Right>
-cnoremap <C-B> <Left>
-cnoremap <M-b> <S-Left>
-cnoremap <M-f> <S-Right>
-cnoremap <C-D> <Del>
+" GNU readline style keymaps for command line editing - temporarily disabled to get used to the default experience
+" cnoremap <C-A> <Home>
+" cnoremap <C-F> <Right>
+" cnoremap <C-B> <Left>
+" cnoremap <M-b> <S-Left>
+" cnoremap <M-f> <S-Right>
+" cnoremap <C-D> <Del>
 
 " center cursor after screen movement
 nnoremap <C-d> <C-d>zz
