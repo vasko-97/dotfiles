@@ -83,7 +83,7 @@ nnoremap Y y$
 " don't yank to default register when changing something
 " nnoremap c "xc
 " xnoremap c "xc
-nnoremap x "_x
+" nnoremap x "_x
 
 " make R actually useful
 nmap R ciw
