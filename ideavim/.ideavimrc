@@ -20,7 +20,7 @@
 if has('unix')
 	source ~/.vimrc
 else
-	source C:/Program Files/Vim/_vimrc
+	source C:/Users/VasilijeSpaic/Vim/_vimrc
 endif
 
 set ideajoin
