@@ -26,7 +26,15 @@ set title
 set hidden
 set nocompatible
 set scrolloff=5
-set clipboard=unnamedplus
+
+if has('clipboard')
+  if has('win32') || has('win64')
+    set clipboard+=unnamed
+  else
+    set clipboard+=unnamedplus
+  endif
+endif
+
 " without this the text wraps way too narrowly..
 set textwidth=0
 if !has('unix')
