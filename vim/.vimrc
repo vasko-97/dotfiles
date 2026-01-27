@@ -26,7 +26,15 @@ set title
 set hidden
 set nocompatible
 set scrolloff=5
-set clipboard=unnamedplus
+
+if has('clipboard')
+  if has('win32') || has('win64')
+    set clipboard+=unnamed
+  else
+    set clipboard+=unnamedplus
+  endif
+endif
+
 " without this the text wraps way too narrowly..
 set textwidth=0
 if !has('unix')
@@ -83,7 +91,7 @@ nnoremap Y y$
 " don't yank to default register when changing something
 " nnoremap c "xc
 " xnoremap c "xc
-nnoremap x "_x
+" nnoremap x "_x
 
 " make R actually useful
 nmap R ciw
@@ -111,4 +119,4 @@ function! ExecuteMacroOverVisualRange()
 endfunction
 
 " a macro to easily turn "one\ntwo\nthreee" into "'one','two','three" for use in SQL WHERE clauses
-let @q="_}kI'€ý5$}k$A',€ý5V}kJ$x"
+let @q="vipI'vip$A',vipJ$x"

@@ -20,7 +20,7 @@
 if has('unix')
 	source ~/.vimrc
 else
-	source C:/Program Files/Vim/_vimrc
+	source C:/Users/VasilijeSpaic/Vim/_vimrc
 endif
 
 set ideajoin
@@ -277,10 +277,17 @@ sethandler <c-l> a:ide
 " v-todo: Better keybinds for extract/inline variable.
 " v-todo: consider remapping H, M, L. They're not that useful because if you can see where you want to go on the screen then there are better commands to get there
 " v-todo: try to get used to gp<leader>mr to reformat just-pasted code.
-" v-todo: make more extensive use of NERDTree set up good navigation bar action keybinds.. https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+" v-todo: learn how to use notes directory with vim
+" v-todo: make more extensive use of NERDTree.. https://github.com/JetBrains/ideavim/wiki/NERDTree-support
 " v-todo: make more extensive use of Harpoon
 " v-todo: figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
 " v-todo: work pc: lf, fzf+everything for opening things, get rid of sublime, flow launcher, revisit workspace app config.. ideally one app per workspace, learn Teams keybinds
+" v-todo: find a way to use teams with komorebi.. probably unmanage the call windows and the screen sharing call window
+" v-todo: better workflow/organisation for DataGrip... need to be able to easily copy paste a column
+" v-todo: tidy notes folder as well
+" v-todo: better binds for starting komorebi and focusing windows
+" v-todo: come up with vim workflow for rough temp notes to replace sublime
+" v-todo: set up komorebi multi monitor keybinds and get used to using both monitors
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
