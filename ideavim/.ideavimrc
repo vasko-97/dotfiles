@@ -285,6 +285,9 @@ sethandler <c-l> a:ide
 " v-todo: find a way to use teams with komorebi.. probably unmanage the call windows and the screen sharing call window
 " v-todo: better workflow/organisation for DataGrip...
 " v-todo: tidy notes folder as well
+" v-todo: better binds for starting komorebi and focusing windows
+" v-todo: come up with vim workflow for rough temp notes to replace sublime
+" v-todo: set up komorebi multi monitor keybinds and get used to using both monitors
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
