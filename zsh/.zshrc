@@ -99,6 +99,17 @@ export PROMPT_COMMAND='history -a; history -n'
      mullvad lockdown-mode set off
  }
 
+# make `help` work like in bash
+unalias run-help 2>/dev/null
+autoload run-help
+alias help="run-help"
+
+# make bash's `help` available if needed
+function bash-help(){
+    bash -c "help $@"
+}
+
+
 ######################### START VI MODE SETUP ###########################################################################
 bindkey -v
 export KEYTIMEOUT=1
