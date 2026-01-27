@@ -282,7 +282,9 @@ sethandler <c-l> a:ide
 " v-todo: make more extensive use of Harpoon
 " v-todo: figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
 " v-todo: work pc: lf, fzf+everything for opening things, get rid of sublime, flow launcher, revisit workspace app config.. ideally one app per workspace, learn Teams keybinds
-" v-todo: find a way to use teams with komorebi
+" v-todo: find a way to use teams with komorebi.. probably unmanage the call windows and the screen sharing call window
+" v-todo: better workflow/organisation for DataGrip...
+" v-todo: tidy notes folder as well
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
