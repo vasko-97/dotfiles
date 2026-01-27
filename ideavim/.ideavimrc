@@ -283,7 +283,7 @@ sethandler <c-l> a:ide
 " v-todo: figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
 " v-todo: work pc: lf, fzf+everything for opening things, get rid of sublime, flow launcher, revisit workspace app config.. ideally one app per workspace, learn Teams keybinds
 " v-todo: find a way to use teams with komorebi.. probably unmanage the call windows and the screen sharing call window
-" v-todo: better workflow/organisation for DataGrip...
+" v-todo: better workflow/organisation for DataGrip... need to be able to easily copy paste a column
 " v-todo: tidy notes folder as well
 " v-todo: better binds for starting komorebi and focusing windows
 " v-todo: come up with vim workflow for rough temp notes to replace sublime

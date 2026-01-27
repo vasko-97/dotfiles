@@ -122,12 +122,12 @@ Komorebic(cmd) {
 ~Alt::Return
 
 ; use Ctrl+j/k/h/l to move around in Teams and Outlook
-#HotIf WinActive("ahk_exe ms-teams.exe") || WinActive("ahk_exe msteams.exe") || WinActive("ahk_exe olk.exe")
+#HotIf WinActive("ahk_exe ms-teams.exe") || WinActive("ahk_exe olk.exe")
 
-^h::Send "{Left}"
+; ^h::Send "{Left}"
 ^j::Send "{Down}"
 ^k::Send "{Up}"
-^l::Send "{Right}"
+; "^l::Send "{Right}"
 
 #HotIf
 
