@@ -121,13 +121,18 @@ Komorebic(cmd) {
 ; Prevent Alt menu bar activation that various apps may be using
 ~Alt::Return
 
-; use Ctrl+j/k/h/l to move around in Teams and Outlook
-#HotIf WinActive("ahk_exe ms-teams.exe") || WinActive("ahk_exe olk.exe")
+; use Ctrl+J/K to move around in Teams and Outlook. todo: add H/L if needed, but might not be
+#HotIf WinActive("ahk_exe ms-teams.exe") || WinActive("ahk_exe olk.exe") || WinActive("ahk_exe brave.exe")
 
-; ^h::Send "{Left}"
 ^j::Send "{Down}"
 ^k::Send "{Up}"
-; "^l::Send "{Right}"
+
+#HotIf
+
+; map Ctrl+M to Enter globally in JetBrains IDEs
+#HotIf WinActive("ahk_exe rider64.exe") || WinActive("ahk_exe datagrip64.exe")
+
+^m::Send "{Enter}"
 
 #HotIf
 
