@@ -26,6 +26,7 @@ endif
 set ideajoin
 set idearefactormode=visual
 set ideamarks
+set clipboard+=unnamedplus
 
 "" Plugin Settings
 "" ========================================================
@@ -290,6 +291,8 @@ sethandler <c-l> a:ide
 " v-todo: set up komorebi multi monitor keybinds and get used to using both monitors
 " v-todo: use keepass from cli.. pass db password to stdin
 " v-todo: move pwsh profile to dotfiles
+" v-todo: align leader map between vimrc and ideavimrc, e.g. <leader>1
+" v-todo: build half decent flow launcher plugin for komorebi
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
