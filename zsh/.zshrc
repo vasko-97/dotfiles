@@ -89,6 +89,7 @@ bindkey -M viins '^S' fzf-history-widget
 
 export PROMPT_COMMAND='history -a; history -n'
  
+# connect/disconnect to Mullvad VPN using the official client
  mvc() {
  	mullvad connect
  	mullvad lockdown-mode set on
@@ -98,6 +99,15 @@ export PROMPT_COMMAND='history -a; history -n'
      mullvad disconnect
      mullvad lockdown-mode set off
  }
+
+# connect/disconnect to Mullvad VPN using WireGuard directly. Necessary on OpenSUSE as the official client is not available.
+# todo: mullvad is a symbolic link pointing to a particular server configuration. Make a dmenu or similar script to make mullvad point to other servers to switch to them.
+wgc() {
+     wg-quick up mullvad
+}
+wgd() {
+     wg-quick down mullvad
+}
 
 # make `help` work like in bash
 unalias run-help 2>/dev/null
