@@ -43,7 +43,11 @@ if !has('unix')
 end
 
 let mapleader = " "
-set notimeout
+
+" todo: notimeout works fine on Fedora, but on OpenSUSE needed to set timeout and timeoutlen, otherwise Ctrl+[ does not switch to normal mode immediately but wait for next key press..
+" set notimeout
+set timeout
+set timeoutlen=100
 
 let &t_SI = "\e[6 q"   " Insert mode: beam
 let &t_EI = "\e[2 q"   " Normal mode: block
