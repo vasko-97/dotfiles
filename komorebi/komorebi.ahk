@@ -8,13 +8,14 @@
 navLayer := false
 
 ; Toggle nav layer with Win + Space
-#Space::
+^Space::
 {
     global navLayer
     navLayer := !navLayer
     
     ; beep to indicate mode change
     ; SoundBeep(navLayer ? 1000 : 700)
+    TrayTip("Nav Layer", "Turned Nav Layer " (navLayer ? "ON" : "OFF"), "Iconi Mute")
     
     ; show tool tip to indicate mode change
     ; ToolTip("Nav layer " (navLayer ? "ON" : "OFF"), 60, 60, 1)
@@ -26,6 +27,7 @@ navLayer := false
 *h::Send "{Blind}{Left}"
 *j::Send "{Blind}{Down}"
 *l::Send "{Blind}{Right}"
+*k::Send "{Blind}{Up}"
 *u::Send "{Blind}{Home}"
 *o::Send "{Blind}{End}"
 
@@ -36,6 +38,30 @@ navLayer := false
 Komorebic(cmd) {
     RunWait(Format("komorebic.exe {}", cmd), , "Hide")
 }
+
+; todo: consider separate bindings to start/stop/kill
+#k::  ; Win+K toggle
+{
+    pid := ProcessExist("komorebi.exe")
+    if (pid) {
+        ; Komorebi is running → stop it
+        TrayTip("Komorebi", "Stopping Komorebi...", "Iconi Mute")
+        Komorebic("stop --bar")
+    } else {
+        ; Komorebi not running → start it
+        TrayTip("Komorebi", "Starting Komorebi...", "Iconi Mute")
+        Komorebic("start --bar --clean-state")
+        TrayTip("Komorebi", "Started Komorebi. Focusing open windows...", "Iconi Mute")
+
+        ; todo: consider separate binding that start komorebi without this script, to use if I know all windows are already maximised
+        configDir := EnvGet("KOMOREBI_CONFIG_HOME")
+        scriptPath := configDir "\FocusOpenWindows.ps1"
+        Run('powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' scriptPath '"')
+        
+        TrayTip("Komorebi", "Finished focusing open windows.", "Iconi Mute")
+    }
+}
+
 
 ; --------------------------------
 ; Reload / toggle
