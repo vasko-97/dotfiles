@@ -1,4 +1,6 @@
 ; set this up to run constantly via Task Scheduler by importing komorebi-ahk.xml
+
+; todo: consider making more and better use of this library
 #Include Notify.ahk
 
 #Requires AutoHotkey v2.0.2
@@ -8,8 +10,8 @@
 
 navLayer := false
 
-; Toggle nav layer with Ctrl + Space
-^Space::
+; Toggle nav layer with Win + Space
+#Space::
 {
     global navLayer
     navLayer := !navLayer
@@ -71,7 +73,8 @@ Komorebic(cmd) {
 ; --------------------------------
 
 ^!q::Komorebic("close")
-!m::Komorebic("minimize")
+!m::Komorebic("manage")
+!+m::Komorebic("unmanage")
 
 ; --------------------------------
 ; Focus windows
