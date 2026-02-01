@@ -1,4 +1,5 @@
 ; set this up to run constantly via Task Scheduler by importing komorebi-ahk.xml
+#Include Notify.ahk
 
 #Requires AutoHotkey v2.0.2
 #SingleInstance Force
@@ -7,19 +8,13 @@
 
 navLayer := false
 
-; Toggle nav layer with Win + Space
+; Toggle nav layer with Ctrl + Space
 ^Space::
 {
     global navLayer
     navLayer := !navLayer
     
-    ; beep to indicate mode change
-    ; SoundBeep(navLayer ? 1000 : 700)
-    TrayTip("Nav Layer", "Turned Nav Layer " (navLayer ? "ON" : "OFF"), "Iconi Mute")
-    
-    ; show tool tip to indicate mode change
-    ; ToolTip("Nav layer " (navLayer ? "ON" : "OFF"), 60, 60, 1)
-    ; SetTimer(() => ToolTip(,,,1), -1200)
+    Notify.Show("Nav Layer", "Turned Nav Layer " (navLayer ? "ON" : "OFF"), , , , "theme=Monokai dur=3 pos=br")
 }
 
 #HotIf navLayer
@@ -45,20 +40,20 @@ Komorebic(cmd) {
     pid := ProcessExist("komorebi.exe")
     if (pid) {
         ; Komorebi is running → stop it
-        TrayTip("Komorebi", "Stopping Komorebi...", "Iconi Mute")
+        Notify.Show("Komorebi", "Stopping Komorebi...", , , , "theme=Matrix dur=3 pos=br")
         Komorebic("stop --bar")
     } else {
         ; Komorebi not running → start it
-        TrayTip("Komorebi", "Starting Komorebi...", "Iconi Mute")
+        Notify.Show("Komorebi", "Starting Komorebi...", , , , "theme=Matrix dur=3 pos=br")
         Komorebic("start --bar --clean-state")
-        TrayTip("Komorebi", "Started Komorebi. Focusing open windows...", "Iconi Mute")
+        Notify.Show("Komorebi", "Started Komorebi. Focusing open windows...", , , , "theme=Matrix dur=3 pos=br")
 
         ; todo: consider separate binding that start komorebi without this script, to use if I know all windows are already maximised
         configDir := EnvGet("KOMOREBI_CONFIG_HOME")
         scriptPath := configDir "\FocusOpenWindows.ps1"
-        Run('powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' scriptPath '"')
+        RunWait('powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' scriptPath '"')
         
-        TrayTip("Komorebi", "Finished focusing open windows.", "Iconi Mute")
+        Notify.Show("Komorebi", "Finished focusing open windows.", , , , "theme=Matrix dur=3 pos=br")
     }
 }
 
