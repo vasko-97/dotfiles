@@ -4,7 +4,7 @@
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
   "default_workspace_padding": 0,
-  "default_container_padding": 3,
+  "default_container_padding": 0,
   // this ties laptop monitor (serial number 0) to index 0 and external monitor (serial number 201NTCZ9A147 for one at work) to index 1
   // somewhat recommended by komorebi author but I'll keep it commented for now because then it works both at home and at work without having to change the external monitor serial number
 //  "display_index_preferences": {
@@ -16,7 +16,7 @@
         "$Env:KOMOREBI_CONFIG_HOME\\komorebi.bar.large-monitor.json"
   ],
   "border": true,
-  "border_width": 8,
+  "border_width": 5,
   "floating_applications": [
     {
       "kind": "Exe",

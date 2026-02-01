@@ -3,6 +3,36 @@
 #Requires AutoHotkey v2.0.2
 #SingleInstance Force
 
+; ################################################################################## Nav Layer ##############################################################################################################
+
+navLayer := false
+
+; Toggle nav layer with Win + Space
+#Space::
+{
+    global navLayer
+    navLayer := !navLayer
+    
+    ; beep to indicate mode change
+    ; SoundBeep(navLayer ? 1000 : 700)
+    
+    ; show tool tip to indicate mode change
+    ; ToolTip("Nav layer " (navLayer ? "ON" : "OFF"), 60, 60, 1)
+    ; SetTimer(() => ToolTip(,,,1), -1200)
+}
+
+#HotIf navLayer
+
+*h::Send "{Blind}{Left}"
+*j::Send "{Blind}{Down}"
+*l::Send "{Blind}{Right}"
+*u::Send "{Blind}{Home}"
+*o::Send "{Blind}{End}"
+
+#HotIf
+
+; ################################################################################## Komorebi ##############################################################################################################
+
 Komorebic(cmd) {
     RunWait(Format("komorebic.exe {}", cmd), , "Hide")
 }
@@ -121,6 +151,8 @@ Komorebic(cmd) {
 ; Prevent Alt menu bar activation that various apps may be using
 ~Alt::Return
 
+; ################################################################################## Misc App Remaps #############################################################################################################
+
 ; use Ctrl+J/K to move around in Teams and Outlook. todo: add H/L if needed, but might not be
 #HotIf WinActive("ahk_exe ms-teams.exe") || WinActive("ahk_exe olk.exe") || WinActive("ahk_exe brave.exe")
 
@@ -136,10 +168,7 @@ Komorebic(cmd) {
 
 #HotIf
 
-; ===============================
-; PANIC KILL SWITCH
-; Ctrl + Alt + Shift + Esc
-; ===============================
+; ################################################################################## Kill Switch (Ctrl + Alt + Shift + Esc)  #############################################################################################################
 
 ^!+Esc::{
     TrayTip("komorebi AHK", "Panic kill switch activated.`nScript exiting.", 1)
