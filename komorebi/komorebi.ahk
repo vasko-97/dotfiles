@@ -36,6 +36,10 @@ Komorebic(cmd) {
     RunWait(Format("komorebic.exe {}", cmd), , "Hide")
 }
 
+; --------------------------------
+; Reload / toggle
+; --------------------------------
+
 ; todo: consider separate bindings to start/stop/kill
 #k::  ; Win+K toggle
 {
@@ -53,20 +57,14 @@ Komorebic(cmd) {
         ; todo: consider separate binding that start komorebi without this script, to use if I know all windows are already maximised
         configDir := EnvGet("KOMOREBI_CONFIG_HOME")
         scriptPath := configDir "\FocusOpenWindows.ps1"
-        RunWait('powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' scriptPath '"')
-        
-        Notify.Show("Komorebi", "Finished focusing open windows.", , , , "theme=Matrix dur=3 pos=br")
+        ; temporarily disabling focus windows script to see if it's what's causing phantom tiles
+        ;RunWait('powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' scriptPath '"')
+        ;Notify.Show("Komorebi", "Finished focusing open windows.", , , , "theme=Matrix dur=3 pos=br")
     }
 }
 
-
-; --------------------------------
-; Reload / toggle
-; --------------------------------
-
 ; todo: consider adding key to reload AHK like whkd has
 !+o::Komorebic("reload-configuration")
-!+i::Komorebic("toggle-shortcuts")
 
 ; --------------------------------
 ; Window actions

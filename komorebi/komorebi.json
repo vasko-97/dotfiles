@@ -15,7 +15,10 @@
         "$Env:KOMOREBI_CONFIG_HOME\\komorebi.bar.laptop-monitor.json",
         "$Env:KOMOREBI_CONFIG_HOME\\komorebi.bar.large-monitor.json"
   ],
-  "border": true,
+  "border": false,
+  // alternative for border
+  "transparency": true,
+  "transparency_alpha": 230,
   "border_width": 5,
   "floating_applications": [
     {
@@ -24,6 +27,12 @@
       "matching_strategy": "Equals"
     }
   ],
+  "ignore_rules": [{
+      // ignore MT5 Manager UI phantom tile
+      "kind": "Class",
+      "id": "Afx:",
+      "matching_strategy": "StartsWith"
+  }],
   "manage_rules": [
     {
       // not sure why but KeePassXC does not get managed unless specified here explicitly
