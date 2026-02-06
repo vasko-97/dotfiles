@@ -293,6 +293,8 @@ sethandler <c-l> a:ide
 " v-todo: move pwsh profile to dotfiles
 " v-todo: align leader map between vimrc and ideavimrc, e.g. <leader>1
 " v-todo: build half decent flow launcher plugin for komorebi
+" v-todo: consider better diffs like difftastic for lazygit: https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#emulating-custom-pagers-on-windows
+" v-todo: better binding for entering /exiting nav layer like Ctrl+Space or Ctrl+;. Adjust other binds accordingly.
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches

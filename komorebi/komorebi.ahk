@@ -1,7 +1,36 @@
 ; set this up to run constantly via Task Scheduler by importing komorebi-ahk.xml
 
+; todo: consider making more and better use of this library
+#Include Notify.ahk
+
 #Requires AutoHotkey v2.0.2
 #SingleInstance Force
+
+; ################################################################################## Nav Layer ##############################################################################################################
+
+navLayer := false
+
+; Toggle nav layer with Win + Space
+#Space::
+{
+    global navLayer
+    navLayer := !navLayer
+    
+    Notify.Show("Nav Layer", "Turned Nav Layer " (navLayer ? "ON" : "OFF"), , , , "theme=Monokai dur=3 pos=br")
+}
+
+#HotIf navLayer
+
+*h::Send "{Blind}{Left}"
+*j::Send "{Blind}{Down}"
+*l::Send "{Blind}{Right}"
+*k::Send "{Blind}{Up}"
+*u::Send "{Blind}{Home}"
+*o::Send "{Blind}{End}"
+
+#HotIf
+
+; ################################################################################## Komorebi ##############################################################################################################
 
 Komorebic(cmd) {
     RunWait(Format("komorebic.exe {}", cmd), , "Hide")
@@ -11,16 +40,39 @@ Komorebic(cmd) {
 ; Reload / toggle
 ; --------------------------------
 
+; todo: consider separate bindings to start/stop/kill
+#k::  ; Win+K toggle
+{
+    pid := ProcessExist("komorebi.exe")
+    if (pid) {
+        ; Komorebi is running → stop it
+        Notify.Show("Komorebi", "Stopping Komorebi...", , , , "theme=Matrix dur=3 pos=br")
+        Komorebic("stop --bar")
+    } else {
+        ; Komorebi not running → start it
+        Notify.Show("Komorebi", "Starting Komorebi...", , , , "theme=Matrix dur=3 pos=br")
+        Komorebic("start --bar --clean-state")
+        Notify.Show("Komorebi", "Started Komorebi. Focusing open windows...", , , , "theme=Matrix dur=3 pos=br")
+
+        ; todo: consider separate binding that start komorebi without this script, to use if I know all windows are already maximised
+        configDir := EnvGet("KOMOREBI_CONFIG_HOME")
+        scriptPath := configDir "\FocusOpenWindows.ps1"
+        ; temporarily disabling focus windows script to see if it's what's causing phantom tiles
+        ;RunWait('powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' scriptPath '"')
+        ;Notify.Show("Komorebi", "Finished focusing open windows.", , , , "theme=Matrix dur=3 pos=br")
+    }
+}
+
 ; todo: consider adding key to reload AHK like whkd has
 !+o::Komorebic("reload-configuration")
-!+i::Komorebic("toggle-shortcuts")
 
 ; --------------------------------
 ; Window actions
 ; --------------------------------
 
 ^!q::Komorebic("close")
-!m::Komorebic("minimize")
+!m::Komorebic("manage")
+!+m::Komorebic("unmanage")
 
 ; --------------------------------
 ; Focus windows
@@ -121,6 +173,8 @@ Komorebic(cmd) {
 ; Prevent Alt menu bar activation that various apps may be using
 ~Alt::Return
 
+; ################################################################################## Misc App Remaps #############################################################################################################
+
 ; use Ctrl+J/K to move around in Teams and Outlook. todo: add H/L if needed, but might not be
 #HotIf WinActive("ahk_exe ms-teams.exe") || WinActive("ahk_exe olk.exe") || WinActive("ahk_exe brave.exe")
 
@@ -136,10 +190,7 @@ Komorebic(cmd) {
 
 #HotIf
 
-; ===============================
-; PANIC KILL SWITCH
-; Ctrl + Alt + Shift + Esc
-; ===============================
+; ################################################################################## Kill Switch (Ctrl + Alt + Shift + Esc)  #############################################################################################################
 
 ^!+Esc::{
     TrayTip("komorebi AHK", "Panic kill switch activated.`nScript exiting.", 1)
