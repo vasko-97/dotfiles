@@ -11,7 +11,8 @@
 navLayer := false
 
 ; Toggle nav layer with Win + Space
-#Space::
+; #Space::
+^Space::
 {
     global navLayer
     navLayer := !navLayer
@@ -58,8 +59,8 @@ Komorebic(cmd) {
         configDir := EnvGet("KOMOREBI_CONFIG_HOME")
         scriptPath := configDir "\FocusOpenWindows.ps1"
         ; temporarily disabling focus windows script to see if it's what's causing phantom tiles
-        ;RunWait('powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' scriptPath '"')
-        ;Notify.Show("Komorebi", "Finished focusing open windows.", , , , "theme=Matrix dur=3 pos=br")
+        RunWait('powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' scriptPath '"')
+        Notify.Show("Komorebi", "Finished focusing open windows.", , , , "theme=Matrix dur=3 pos=br")
     }
 }
 

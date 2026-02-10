@@ -15,9 +15,9 @@
         "$Env:KOMOREBI_CONFIG_HOME\\komorebi.bar.laptop-monitor.json",
         "$Env:KOMOREBI_CONFIG_HOME\\komorebi.bar.large-monitor.json"
   ],
-  "border": false,
+  "border": true,
   // alternative for border
-  "transparency": true,
+  "transparency": false,
   "transparency_alpha": 230,
   "border_width": 5,
   "floating_applications": [

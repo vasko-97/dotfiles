@@ -295,6 +295,7 @@ sethandler <c-l> a:ide
 " v-todo: build half decent flow launcher plugin for komorebi
 " v-todo: consider better diffs like difftastic for lazygit: https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#emulating-custom-pagers-on-windows
 " v-todo: better binding for entering /exiting nav layer like Ctrl+Space or Ctrl+;. Adjust other binds accordingly.
+" v-todo: collect bookmarks for swagger pages and various argo envs etc.
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
