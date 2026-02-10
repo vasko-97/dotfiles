@@ -120,3 +120,7 @@ endfunction
 
 " a macro to easily turn "one\ntwo\nthreee" into "'one','two','three" for use in SQL WHERE clauses
 let @q="vipI'vip$A',vipJ$x"
+
+" add counted j and k movement to jump list to enable navigating between them with Ctrl+O and Ctrl+I
+nmap <silent> j :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'j'<CR>
+nmap <silent> k :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'k'<CR>
