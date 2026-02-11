@@ -92,6 +92,8 @@ Komorebic(cmd) {
 
 !+h::Komorebic("move left")
 !+l::Komorebic("move right")
+!+j::Komorebic("move down")
+!+k::Komorebic("move up")
 !+Enter::Komorebic("promote")
 
 ; --------------------------------
