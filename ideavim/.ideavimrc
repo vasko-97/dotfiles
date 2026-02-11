@@ -283,7 +283,7 @@ sethandler <c-l> a:ide
 " v-todo: make more extensive use of Harpoon
 " v-todo: figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
 " v-todo: work pc: lf, zoxide, fzf+everything for opening things, get rid of sublime, flow launcher, revisit workspace app config.. ideally one app per workspace, learn Teams keybinds
-" v-todo: find a way to use teams with komorebi.. probably unmanage the call windows and the screen sharing call window
+" v-todo: find a way to use teams with komorebi.. probably unmanage the call windows and the screen sharing call window. consider also if it's possible to temporarily disable forced workspace to move things aroudn temporarily
 " v-todo: tidy notes folder as well
 " v-todo: managing tool windows, e.g. Services query results on DataGrip.. add mappings for hide active window (Shift+Esc, works even after switching from tool window to editor), reopen last active window etc (F12)., leader keybind to get to important tool windows, Remap the usual Alt+right/left to change tabs within the query results window.. set up a tool window layout to be able to reuse.. play with view modes and options like binds to maximise and minimise tool windows. in datagrip Ctrl+G selects whole column.. try to find a way to get change page size bound to a key as well.
 " v-todo: better binds for starting komorebi and focusing windows
