@@ -286,22 +286,32 @@ sethandler <c-k> a:ide
 " should be set to Editor Choose Lookup Item in the IDE
 sethandler <c-l> a:ide
 
-" v-todo: consider remapping H, M, L. They're not that useful because if you can see where you want to go on the screen then there are better commands to get there
-" v-todo: consider remapping R again if mapping it to ciw is not that useful
-" v-todo: try to get used to gp<leader>mr to reformat just-pasted code.
-" v-todo: learn how to use notes directory with vim
-" v-todo: make more extensive use of NERDTree.. https://github.com/JetBrains/ideavim/wiki/NERDTree-support
-" v-todo: make more extensive use of Harpoon
-" v-todo: figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
-" v-todo: work pc: lf, zoxide, fzf+everything for opening things, get rid of sublime, flow launcher, revisit workspace app config.. ideally one app per workspace, learn Teams keybinds
-" v-todo: find a way to use teams with komorebi.. probably unmanage the call windows and the screen sharing call window. consider also if it's possible to temporarily disable forced workspace to move things aroudn temporarily
-" v-todo: tidy notes folder as well
-" v-todo: managing tool windows, e.g. Services query results on DataGrip.. add mappings for hide active window (Shift+Esc, works even after switching from tool window to editor), reopen last active window etc (F12)., leader keybind to get to important tool windows, Remap the usual Alt+right/left to change tabs within the query results window.. set up a tool window layout to be able to reuse.. play with view modes and options like binds to maximise and minimise tool windows. in datagrip Ctrl+G selects whole column.. try to find a way to get change page size bound to a key as well.
-" v-todo: come up with vim workflow for rough temp notes to replace sublime
-" v-todo: use keepass from cli.. pass db password to stdin
-" v-todo: build half decent flow launcher plugin for komorebi
-" v-todo: consider better diffs like difftastic for lazygit: https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#emulating-custom-pagers-on-windows
-" v-todo: collect bookmarks for swagger pages and various argo envs etc.
+" must have
+    " - learn how to use notes directory with vim
+    " - figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
+    " - zoxide
+    " - flow launcher app opening
+    " - flow launcher komorebi window switching on single workspace (I need to build this)
+    " - flow launcher or fzf or everything or some combo for opening JetBrains solutions and folders
+    " - collect bookmarks for swagger pages and various argo envs etc.
+    " - raise issue with phantom tiles
+" consider 
+    " - consider remapping H, M, L. They're not that useful because if you can see where you want to go on the screen then there are better commands to get there
+    " - consider remapping R again if mapping it to ciw is not that useful
+    " - space out terminal windows over workspaces
+" nice to have
+    " - lf
+    " - flow launcher everything not in must have
+    " - use keepass from cli.. pass db password to stdin
+    " - consider better diffs like difftastic for lazygit: https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#emulating-custom-pagers-on-windows
+    " - play with tool windows and settings and view modes and binds e.g. to maximise and minimise tool window
+" currently getting used to
+    " - try to get used to gp<leader>mr to reformat just-pasted code.
+    " - make more extensive use of NERDTree.. https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+    " - make more extensive use of Harpoon
+    " - leave komorebi on for Teams calls
+    " - Teams keybinds
+    " - tool window management (<leader>t bindings, in DataGrip Tab focuses query, then Ctrl+G to copy column.., I've set Ctrl+Shift+./, to move next/prev tab instead of Alt+Right/Left)
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
