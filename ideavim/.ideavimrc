@@ -309,7 +309,7 @@ sethandler <c-l> a:ide
     " - consider better diffs like difftastic for lazygit: https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#emulating-custom-pagers-on-windows
     " - play with tool windows and settings and view modes and binds e.g. to maximise and minimise tool window
     " - incorporate Extend Selection somehow in IdeaVim if possible
-    " - sesh (on linux)
+    " - sesh (on linux) https://www.youtube.com/watch?v=8HXQ12ff0_s&lc=UgwhicOm15i-rqKhVxN4AaABAg.ASypEfEJ4feAT5oQdkl62_
 " currently getting used to
     " - try to get used to gp<leader>mr to reformat just-pasted code.
     " - make more extensive use of NERDTree.. https://github.com/JetBrains/ideavim/wiki/NERDTree-support
