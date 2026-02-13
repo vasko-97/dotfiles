@@ -160,11 +160,11 @@ Komorebic(cmd) {
 ; Move windows across workspaces
 ; --------------------------------
 
-!+1::Komorebic("move-to-workspace 0")
-!+2::Komorebic("move-to-workspace 1")
-!+3::Komorebic("move-to-workspace 2")
-!+4::Komorebic("move-to-workspace 3")
-!+5::Komorebic("move-to-workspace 4")
+^!+1::Komorebic("move-to-workspace 0")
+^!+2::Komorebic("move-to-workspace 1")
+^!+3::Komorebic("move-to-workspace 2")
+^!+4::Komorebic("move-to-workspace 3")
+^!+5::Komorebic("move-to-workspace 4")
 !+6::Komorebic("move-to-workspace 5")
 !+7::Komorebic("move-to-workspace 6")
 !+8::Komorebic("move-to-workspace 7")

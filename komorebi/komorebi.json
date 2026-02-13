@@ -66,7 +66,7 @@
         {
           "name": "1 - Browser",
           "layout": "Columns",
-          "workspace_rules": [
+          "initial_workspace_rules": [
             {
               "id": "brave.exe",
               "kind": "Exe"
@@ -76,7 +76,7 @@
         {
           "name": "2 - Communications",
           "layout": "Columns",
-          "workspace_rules": [
+          "initial_workspace_rules": [
             {
               "id": "ms-teams.exe",
               "kind": "Exe"
@@ -90,7 +90,7 @@
         {
           "name": "3 - Rider",
           "layout": "Columns",
-          "workspace_rules": [
+          "initial_workspace_rules": [
             {
               "id": "rider64.exe",
               "kind": "Exe"
@@ -100,7 +100,7 @@
         {
           "name": "4 - DataGrip",
           "layout": "Columns",
-          "workspace_rules": [
+          "initial_workspace_rules": [
             {
               "id": "datagrip64.exe",
               "kind": "Exe"
@@ -110,7 +110,7 @@
         {
           "name": "5 - Terminal",
           "layout": "Columns",
-          "workspace_rules": [
+          "initial_workspace_rules": [
             {
               "id": "WindowsTerminal.exe",
               "kind": "Exe"
@@ -120,7 +120,7 @@
         {
           "name": "6 - Keepass/Spotify",
           "layout": "Columns",
-          "workspace_rules": [
+          "initial_workspace_rules": [
             {
               "id": "KeePassXC.exe",
               "kind": "Exe"
@@ -134,7 +134,7 @@
         {
           "name": "7 - File Explorer",
           "layout": "Columns",
-          "workspace_rules": [
+          "initial_workspace_rules": [
             {
               "id": "explorer.exe",
               "kind": "Exe"
@@ -144,7 +144,7 @@
         {
           "name": "8 - Sublime",
           "layout": "Columns",
-          "workspace_rules": [
+          "initial_workspace_rules": [
             {
               "id": "sublime_text.exe",
               "kind": "Exe"

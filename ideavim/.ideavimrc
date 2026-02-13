@@ -195,13 +195,15 @@ map <leader>sf <action>(com.mituuz.fuzzier.Fuzzier)
 map <leader>sg <action>(com.mituuz.fuzzier.FuzzyGrepCaseInsensitive)
 
 " File navigation
-let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
-let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fe Show recent files"
-let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent locations"
+let g:WhichKeyDesc_file_nav = "<leader>f File Navigation"
+let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fe Show Recent Files"
+let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show Recent Locations"
 let g:WhichKeyDesc_file_nav_new_scratch_file = "<leader>fs New Scratch File"
+let g:WhichKeyDesc_file_file_structure = "<leader>fp Show File Structure Popup"
 map <leader>fe <action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
+map <leader>fp <action>(FileStructurePopup)
 
 " Refactoring
 let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
@@ -289,7 +291,7 @@ sethandler <c-l> a:ide
 " must have
     " - learn how to use notes directory with vim
     " - figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
-    " - zoxide
+    " - zoxide (zi for fzf completion)
     " - flow launcher app opening
     " - flow launcher komorebi window switching on single workspace (I need to build this)
     " - flow launcher or fzf or everything or some combo for opening JetBrains solutions and folders
@@ -299,12 +301,15 @@ sethandler <c-l> a:ide
     " - consider remapping H, M, L. They're not that useful because if you can see where you want to go on the screen then there are better commands to get there
     " - consider remapping R again if mapping it to ciw is not that useful
     " - space out terminal windows over workspaces
+    " - move very common actions away from leader binds to one keystroke combos.. e.g. reveal in file explorer, focus project view, search actions.. have R, H, M, L and Ctrl combos as good options
 " nice to have
-    " - lf
+    " - lf or nnn or ranger (all integrate with zoxide)
     " - flow launcher everything not in must have
     " - use keepass from cli.. pass db password to stdin
     " - consider better diffs like difftastic for lazygit: https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#emulating-custom-pagers-on-windows
     " - play with tool windows and settings and view modes and binds e.g. to maximise and minimise tool window
+    " - incorporate Extend Selection somehow in IdeaVim if possible
+    " - sesh (on linux)
 " currently getting used to
     " - try to get used to gp<leader>mr to reformat just-pasted code.
     " - make more extensive use of NERDTree.. https://github.com/JetBrains/ideavim/wiki/NERDTree-support
@@ -312,6 +317,7 @@ sethandler <c-l> a:ide
     " - leave komorebi on for Teams calls
     " - Teams keybinds
     " - tool window management (<leader>t bindings, in DataGrip Tab focuses query, then Ctrl+G to copy column.., I've set Ctrl+Shift+./, to move next/prev tab instead of Alt+Right/Left)
+    " - map file structure to leader keybind, then use for navigating to methods by name
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
