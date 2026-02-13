@@ -318,6 +318,7 @@ sethandler <c-l> a:ide
     " - Teams keybinds
     " - tool window management (<leader>t bindings, in DataGrip Tab focuses query, then Ctrl+G to copy column.., I've set Ctrl+Shift+./, to move next/prev tab instead of Alt+Right/Left)
     " - map file structure to leader keybind, then use for navigating to methods by name
+    " - use jetbrains built in diff, not copy pasting files in DiffMerge...
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
