@@ -60,7 +60,7 @@ map a :push %mkdir<space>
 
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
-cmd trash %set -f; mv -t ~/.trash $fx
+cmd trash %trash $fx
 
 # define a custom 'delete' command
 # cmd delete ${{
@@ -106,3 +106,6 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+# see hidden files by default
+set hidden
