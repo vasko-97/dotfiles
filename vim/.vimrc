@@ -61,6 +61,7 @@ let &t_SR = "\e[4 q"   " Replace mode: underline
 " cnoremap <C-D> <Del>
 
 nmap <leader>1 :nohlsearch<CR>
+nmap <Leader>ma ggVG
 
 " center cursor after screen movement
 nnoremap <C-d> <C-d>zz
