@@ -119,6 +119,8 @@ function bash-help(){
     bash -c "help $@"
 }
 
+# initialise zoxide
+eval "$(zoxide init zsh)"
 
 ######################### START VI MODE SETUP ###########################################################################
 bindkey -v
