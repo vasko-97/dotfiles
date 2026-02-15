@@ -61,6 +61,89 @@ Import-Module posh-git
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
+########################################################################################## fzf JetBrains project opener ##################################################################################################################################
+
+$Global:JB_RiderExe = "rider"
+$Global:JB_DataGripExe = "datagrip"
+
+$Global:JB_RiderProjectsRoot = "C:\DevGit\"
+$Global:JB_DataGripProjectsDir = "C:\DevGit\DevTools\DataGripProjects"
+
+$Global:JB_CustomProjects = @(
+    @{
+        Name = "Example"
+        Path = "C:\dev\db\example"
+        Ide  = "C:\Program Files\JetBrains\DataGrip\bin\datagrip64.exe"
+    }
+)
+
+# --- FUNCTION ---
+
+function Open-JBProject {
+
+    $items = @()
+
+    # Build Everything query
+    if ($Global:JB_RiderProjectsRoot) {
+        $query = "*.sln path:$Global:JB_RiderProjectsRoot"
+    }
+    else {
+        $query = "*.sln"
+    }
+
+    $slnFiles = Invoke-Expression "es.exe $query"
+
+    # Add Rider projects
+    foreach ($file in $slnFiles) {
+        $items += [PSCustomObject]@{
+            Display = "Rider | $(Split-Path $file -Leaf) | $(Split-Path $file -Parent)"
+            Path    = $file
+            Ide     = $Global:JB_RiderExe
+        }
+    }
+
+    # Add DataGrip projects
+    if (Test-Path $Global:JB_DataGripProjectsDir) {
+        $dataGripDirs = Get-ChildItem -Path $Global:JB_DataGripProjectsDir -Directory
+        foreach ($dir in $dataGripDirs) {
+            $items += [PSCustomObject]@{
+                Display = "DataGrip | $($dir.Name) | $($dir.FullName)"
+                Path    = $dir.FullName
+                Ide     = $Global:JB_DataGripExe
+            }
+        }
+    }
+
+    # Add custom IDE entries
+    foreach ($proj in $Global:JB_CustomProjects) {
+        $items += [PSCustomObject]@{
+            Display = "Custom | $($proj.Name) | $($proj.Path)"
+            Path    = $proj.Path
+            Ide     = $proj.Ide
+        }
+    }
+
+    if (-not $items) {
+        Write-Host "No projects found."
+        return
+    }
+
+    $selection = $items |
+        Select-Object -ExpandProperty Display |
+        fzf --height=40% --layout=reverse --border --prompt="Projects > "
+
+    if (-not $selection) { return }
+
+    $chosen = $items | Where-Object { $_.Display -eq $selection }
+
+    if ($chosen) {
+        Start-Process $chosen.Ide "`"$($chosen.Path)`""
+    }
+}
+
+Set-Alias jb Open-JBProject
+##################################################################################################################################################################################################################################################
+
 # - add logging to all this
 # - extract dev folder to env variable
 function SetUpSaturnRepoToUseLocalNugetLibraries {
