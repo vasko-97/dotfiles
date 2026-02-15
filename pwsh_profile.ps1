@@ -63,21 +63,19 @@ Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 ########################################################################################## fzf JetBrains project opener ##################################################################################################################################
 
-$Global:JB_RiderExe = "rider"
-$Global:JB_DataGripExe = "datagrip"
+$Global:JB_RiderExe = "C:\Users\VasilijeSpaic\AppData\Local\Programs\Rider\bin\rider64.exe"
+$Global:JB_DataGripExe = "C:\Users\VasilijeSpaic\AppData\Local\Programs\DataGrip\bin\datagrip64.exe"
 
 $Global:JB_RiderProjectsRoot = "C:\DevGit\"
 $Global:JB_DataGripProjectsDir = "C:\DevGit\DevTools\DataGripProjects"
 
 $Global:JB_CustomProjects = @(
     @{
-        Name = "Example"
-        Path = "C:\dev\db\example"
-        Ide  = "C:\Program Files\JetBrains\DataGrip\bin\datagrip64.exe"
+        Name = "dotfiles"
+        Path = "C:\DevGit\dotfiles"
+        Ide  = "rider"
     }
 )
-
-# --- FUNCTION ---
 
 function Open-JBProject {
 
@@ -137,7 +135,7 @@ function Open-JBProject {
     $chosen = $items | Where-Object { $_.Display -eq $selection }
 
     if ($chosen) {
-        Start-Process $chosen.Ide "`"$($chosen.Path)`""
+        Start-Process $chosen.Ide "`"$($chosen.Path)`"" -WindowStyle Normal
     }
 }
 
