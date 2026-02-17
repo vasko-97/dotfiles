@@ -8,71 +8,26 @@
 
 ; ################################################################################## Nav Layer ##############################################################################################################
 
-spaceUsedAsLayer := false
+navLayer := false
 
-#HotIf GetKeyState("Space","P") && GetKeyState("Shift","P")
-
-*Space::Return  ; suppress sending Space while nav layer is active
-
-; --- Navigation keys ---
-*h::
+; Toggle nav layer with Win + Space
+; #Space::
+^Space::
 {
-    spaceUsedAsLayer := true
-    SendInput "{Left}"
+    global navLayer
+    navLayer := !navLayer
+    
+    Notify.Show("Nav Layer", "Turned Nav Layer " (navLayer ? "ON" : "OFF"), , , , "theme=Monokai dur=3 pos=br")
 }
 
-*j::
-{
-    spaceUsedAsLayer := true
-    SendInput "{Down}"
-}
+#HotIf navLayer
 
-*k::
-{
-    spaceUsedAsLayer := true
-    SendInput "{Up}"
-}
-
-*l::
-{
-    spaceUsedAsLayer := true
-    SendInput "{Right}"
-}
-
-*u::
-{
-    spaceUsedAsLayer := true
-    SendInput "{Home}"
-}
-
-*o::
-{
-    spaceUsedAsLayer := true
-    SendInput "{End}"
-}
-
-; --- Left Ctrl acts as Shift inside nav layer ---
-*LControl::
-{
-    SendInput "{Shift down}"
-}
-
-*LControl Up::
-{
-    SendInput "{Shift up}"
-}
-
-; --- Tab acts like Ctrl inside nav layer ---
-*Tab::
-{
-    spaceUsedAsLayer := true
-    SendInput "{Ctrl down}"
-}
-
-*Tab Up::
-{
-    SendInput "{Ctrl up}"
-}
+*h::Send "{Blind}{Left}"
+*j::Send "{Blind}{Down}"
+*l::Send "{Blind}{Right}"
+*k::Send "{Blind}{Up}"
+*u::Send "{Blind}{Home}"
+*o::Send "{Blind}{End}"
 
 #HotIf
 
