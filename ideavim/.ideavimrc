@@ -299,13 +299,7 @@ sethandler <c-l> a:ide
 " must have
     " - learn how to use notes directory with vim
     " - figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
-    " - zoxide (zi for fzf completion)
     " - flow launcher app opening
-    " - flow launcher komorebi window switching on single workspace (I need to build this)
-    " - flow launcher or fzf or everything or some combo for opening JetBrains solutions and folders
-    " - collect bookmarks for swagger pages and various argo envs etc.
-    " - raise issue with phantom tiles
-    " - figure out how to get Rider continuous testing working consistently
 " consider 
     " - consider remapping H, M, L. They're not that useful because if you can see where you want to go on the screen then there are better commands to get there
     " - consider remapping R again if mapping it to ciw is not that useful
@@ -331,7 +325,7 @@ sethandler <c-l> a:ide
     " - tool window management (<leader>t bindings, in DataGrip Tab focuses query, then Ctrl+G to copy column.., I've set Ctrl+Shift+./, to move next/prev tab instead of Alt+Right/Left)
     " - map file structure to leader keybind, then use for navigating to methods by name
     " - use jetbrains built in diff, not copy pasting files in DiffMerge...
-    " - g; to go to last edit location
+    " - g; to go to last edit location, g, to go back, gi to insert in last edit location.
 
 " scratch path (paste this in idea.properties file to set scratch directory)
 " idea.scratch.path/scratches=C:/Users/VasilijeSpaic/OneDrive - Scopemarkets Services CY LTD/Documents/RiderScratches
