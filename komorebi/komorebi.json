@@ -114,6 +114,10 @@
             {
               "id": "WindowsTerminal.exe",
               "kind": "Exe"
+            },
+            {
+              "id": "wezterm-gui.exe",
+              "kind": "Exe"
             }
           ]
         },
