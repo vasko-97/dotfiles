@@ -24,6 +24,27 @@ local config = {
     { key = 'f', mods = 'LEADER', action = act.TogglePaneZoomState },
     -- ❌ Close pane
     { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane { confirm = false } },
+    -- Change active pane size
+    {
+	    key = 'h',
+	    mods = 'CTRL|SHIFT',
+	    action = wezterm.action.AdjustPaneSize { 'Left', 5 },
+    },
+    {
+	    key = 'j',
+	    mods = 'CTRL|SHIFT',
+	    action = wezterm.action.AdjustPaneSize { 'Down', 5 },
+    },
+    {
+	    key = 'k',
+	    mods = 'CTRL|SHIFT',
+	    action = wezterm.action.AdjustPaneSize { 'Up', 5 },
+    },
+    {
+	    key = 'l',
+	    mods = 'CTRL|SHIFT',
+	    action = wezterm.action.AdjustPaneSize { 'Right', 5 },
+    },
   },
 }
 
