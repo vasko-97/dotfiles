@@ -29,9 +29,9 @@ set scrolloff=5
 
 if has('clipboard') 
   if has('win32') || has('win64')
-    set clipboard+=unnamed
+    set clipboard^=unnamed
   else
-    set clipboard+=unnamedplus
+    set clipboard^=unnamedplus
   endif
 endif
 
@@ -117,6 +117,7 @@ imap <Tab> <C-X><C-F>
 " avoid having to use gj/gk for wrapped lines.. just use j and k
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
+
 " https://github.com/stoeffel/.dotfiles/blob/master/vim/visual-at.vim
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
