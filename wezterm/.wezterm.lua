@@ -31,4 +31,14 @@ if is_windows then
   config.default_prog = { 'pwsh.exe' }
 end
 
+-- make inactive panes slightly less bright
+config.inactive_pane_hsb = {
+	brightness = 0.7,
+}
+
+config.colors = {
+  -- A bluish background color. Provides some contrast between active and inactive panes.
+  background = "#1a1a2e"
+}
+
 return config
