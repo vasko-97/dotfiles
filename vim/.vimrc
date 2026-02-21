@@ -26,6 +26,7 @@ set title
 set hidden
 set nocompatible
 set scrolloff=5
+set formatoptions-=ro
 
 if has('clipboard') 
   if has('win32') || has('win64')
