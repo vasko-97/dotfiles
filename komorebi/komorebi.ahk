@@ -82,8 +82,6 @@ Komorebic(cmd) {
 !l::Komorebic("focus right")
 !j::Komorebic("focus down")
 !k::Komorebic("focus up")
-!o::Komorebic("cycle-focus previous")
-!i::Komorebic("cycle-focus next")
 
 ; --------------------------------
 ; Move windows
@@ -103,9 +101,14 @@ Komorebic(cmd) {
 !Down::Komorebic("stack down")
 !Up::Komorebic("stack up")
 !Right::Komorebic("stack right")
-!;::Komorebic("unstack")
-![::Komorebic("cycle-stack previous")
-!]::Komorebic("cycle-stack next")
+
+!u::Komorebic("stack-all")
+!;::Komorebic("unstack-all")
+
+; ![::Komorebic("cycle-stack previous")
+; !]::Komorebic("cycle-stack next")
+!o::Komorebic("cycle-stack previous")
+!i::Komorebic("cycle-stack next")
 
 ; --------------------------------
 ; Resize
@@ -121,7 +124,7 @@ Komorebic(cmd) {
 ; --------------------------------
 
 ^!t::Komorebic("toggle-float")
-!u::Komorebic("toggle-monocle")
+; !u::Komorebic("toggle-monocle")
 
 ; --------------------------------
 ; Window manager options
@@ -135,7 +138,6 @@ Komorebic(cmd) {
 ; --------------------------------
 
 ^!x::Komorebic("focus-last-workspace")
-!y::Komorebic("move-to-workspace 8")
 
 ; --------------------------------
 ; Workspaces (focus)
