@@ -112,9 +112,10 @@ set hidden
 set number
 set relativenumber
 
+# below is commented for now because it doesn't seem to be a problem after upgrading to r41
 # in my current setup (Fedora, zsh, kitty or GNOME terminal, lf version r39), doing the below operations always mangles the terminal for some reason
 # below remaps are a workaround to fix it
-map y push :copy;redraw<enter>
-map d push :cut;redraw<enter>
-map p push :paste;redraw<enter>
-map c push :clear;redraw<enter>
+# map y push :copy;redraw<enter>
+# map d push :cut;redraw<enter>
+# map p push :paste;redraw<enter>
+# map c push :clear;redraw<enter>
