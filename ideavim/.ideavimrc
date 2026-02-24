@@ -299,13 +299,15 @@ sethandler <c-l> a:ide
     " - learn how to use notes directory with vim
     " - figure out registers remaps https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c. X can probably be something more useful.
     " - flow launcher app opening
+    " - get launching flow launcher on startup working
+    " - leader based maps for navigating wezterm panes
+    " - keypass cli or figure out how to use lastpass
 " consider 
     " - consider remapping H, M, L. They're not that useful because if you can see where you want to go on the screen then there are better commands to get there
     " - consider remapping R again if mapping it to ciw is not that useful
     " - space out terminal windows over workspaces
     " - move very common actions away from leader binds to one keystroke combos.. e.g. reveal in file explorer, focus project view, search actions.. have R, H, M, L and Ctrl combos as good options
     " - reorganise leader bindings.. e.g. group testing ones together
-    " - split panes on Windows terminal, or having different instances in monocle
 " nice to have
     " - lf or nnn or ranger (all integrate with zoxide)
     " - flow launcher everything not in must have
@@ -314,12 +316,11 @@ sethandler <c-l> a:ide
     " - play with tool windows and settings and view modes and binds e.g. to maximise and minimise tool window
     " - incorporate Extend Selection somehow in IdeaVim if possible
     " - sesh (on linux) https://www.youtube.com/watch?v=8HXQ12ff0_s&lc=UgwhicOm15i-rqKhVxN4AaABAg.ASypEfEJ4feAT5oQdkl62_
-    " - wezterm for basic multiplexing
 " currently getting used to
     " - try to get used to gp<leader>mr to reformat just-pasted code.
     " - make more extensive use of NERDTree.. https://github.com/JetBrains/ideavim/wiki/NERDTree-support
     " - make more extensive use of Harpoon
-    " - leave komorebi on for Teams calls
+    " - leave komorebi on for Teams calls, even when screen sharing
     " - Teams keybinds
     " - tool window management (<leader>t bindings, in DataGrip Tab focuses query, then Ctrl+G to copy column.., I've set Ctrl+Shift+./, to move next/prev tab instead of Alt+Right/Left)
     " - map file structure to leader keybind, then use for navigating to methods by name
