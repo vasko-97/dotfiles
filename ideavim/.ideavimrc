@@ -287,7 +287,6 @@ map <leader>h5 <Action>(GotoHarpoon5)
 let g:WhichKeyDesc_reload_vim_rc = "<leader>9 Reload .ideavimrc"
 map <leader>9 :source ~/.ideavimrc<CR>
 let g:WhichKeyDesc_remove_search_highlight = "<leader>1 Clear Search Highlights"
-" <leader>1 should be configured in .vimrc
 
 " should be mapped to Up/Down in IDE to enable navigating menus from home row
 sethandler <c-j> a:ide

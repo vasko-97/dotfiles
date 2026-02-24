@@ -180,7 +180,7 @@ Komorebic(cmd) {
 ; ################################################################################## Misc App Remaps #############################################################################################################
 
 ; use Ctrl+J/K to move around in Teams and Outlook. todo: add H/L if needed, but might not be
-#HotIf WinActive("ahk_exe ms-teams.exe") || WinActive("ahk_exe olk.exe") || WinActive("ahk_exe brave.exe")
+#HotIf WinActive("ahk_exe ms-teams.exe") || WinActive("ahk_exe olk.exe")
 
 ^j::Send "{Down}"
 ^k::Send "{Up}"

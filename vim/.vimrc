@@ -85,19 +85,19 @@ vnoremap y ygv<Esc>`>
 " Y should yank until the end of line, for consistency with C, D
 nnoremap Y y$
 
-" v-todo: temporarily disabling register remaps below until I get used to the default register experience.
-" v-todo: do something reasonable: https://chatgpt.com/c/697266bf-72fc-8329-9410-8e9caf22d57c
 " Make X an operator that removes without placing text in the default registry
-" nmap X "_d
-" nmap XX "_dd
-" vmap X "_d
-" vmap x "_d
-" don't yank to default register when changing something
-" nnoremap c "xc
-" xnoremap c "xc
-" nnoremap x "_x
+nmap X "_d
+nmap XX "_dd
+vmap X "_d
+" don't clobber default register where it's not expected
+xnoremap x "_x
+xnoremap s "_s
+" don't clobber default register when pasting over highlighted text
+vnoremap p "_dP
 
 " make R actually useful
+" v-todo: maybe change to something else IDE-specific.. I don't mind ciw
+" v-todo: similarly consider remapping X, H, M, L and possibly lots of other capital letters
 nmap R ciw
 
 " Reselect last-pasted text
